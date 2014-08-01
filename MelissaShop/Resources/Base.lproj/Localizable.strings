@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  MelissaShop
+
+  Created by 植田 洋次 on 2014/05/12.
+  Copyright (c) 2014年 Appiaries Corporation. All rights reserved.
+*/
+"LoginSuccessMessage" = "ログインしました";
+"ErrorMessageSearchWord" = "検索する文字を入力してください";
+"CouponLimitCount" = "利用回数";
+"CouponExpireDate" = "有効期限";
+"CouponLimitCount" = "利用回数";
+"CouponLimitCountSuffix" = "回";
+"CouponLimitConditions" = "利用条件";
+"CouponUsesDescription" = "利用方法";
+"CouponUsesPrecautions" = "注意事項";
+"LoginAlertTitle" = "ご注意";
+"LoginAlertMessage" = "この機能を利用するには会員ログインが必要です。";
+"LoginAlertButtonName" = "ログインへ";
+"SettingTitleUser" = "ユーザ情報";
+"SettingTitleHowTo" = "アプリの使い方";
+"SettingTitleTerms" = "利用規約";
+"SettingTitlePrivacy" = "プライバシーポリシー";
+"SettingTitleFaq" = "よくあるご質問";
+"SettingTitleLogout" = "ログアウト";
+"LogoutAlertMessage" = "ログアウトしてもよろしいですか？";
+"LogoutSuccessMessage" = "ログアウトしました。";
+"Gender" = "性別";
+"DateOfBirth" = "生年月日";
+"GenderMale" = "男性";
+"GenderFemale" = "女性";
+"GenderOther" = "その他";
+"ErrorTitle" = "エラー";
+"NotPermitLocationMessage" = "設定から当アプリの位置情報を許可してください。";
+"NotLocationMessage" = "位置情報の取得に失敗しました。電波の良い所でもう一度お試し下さい。";
+"ShopListTitleLocation" = "現在地から検索";
+"ShopListTitleSearch" = "検索ワードで検索";
+"CouponLimitCountNoLimit" = "無制限";
+"Address" = "住所";
+"FavoriteFood" = "好きな食べ物";
+"LastLocation" = "位置情報";
+"LastAccessDate" = "最新アクセス時間";
+"SaveSuccessMessage" = "保存しました";
+"CommonError" = "エラーが発生しました。再度やり直して下さい。";
