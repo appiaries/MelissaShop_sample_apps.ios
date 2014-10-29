@@ -68,7 +68,7 @@
             MELSAppInfo *appInfo = [MELSAppInfoManager sharedManager].appInfo;
             if (appInfo != nil && appInfo.appInfoNumber == self.appInfoNumber) {
                 self.titleLabel.text = appInfo.title;
-                self.descriptionLabel.text = appInfo.description;
+                self.descriptionLabel.text = appInfo.textDescription;
                 [self layoutSubview];
             }
         }

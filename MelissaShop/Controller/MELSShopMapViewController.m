@@ -35,7 +35,7 @@ static NSString *const kPinAnnotationIdentifier = @"PinAnnotationIdentifier";
     self.mapView.showsUserLocation = YES;
     
     //位置情報を取得
-    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager = [CLLocationManager updateManager];
     if ([CLLocationManager isLocationUpdatesAvailable]) {
         [self currentLocationButtonAction:nil];
     } else {

@@ -34,7 +34,7 @@
     self.titleLabel.text = self.information.title;
     
     //詳細
-    self.descriptionLabel.text = self.information.description;
+    self.descriptionLabel.text = self.information.textDescription;
     
     //下部の画像
     [self.bottomImageView setImageWithURL:[NSURL URLWithString:self.information.detailBottomImageUrl] placeholderImage:nil];
