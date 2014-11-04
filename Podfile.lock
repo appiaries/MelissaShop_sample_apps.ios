@@ -1,53 +1,47 @@
 PODS:
-  - AFNetworkActivityLogger (2.0.2):
+  - AFNetworkActivityLogger (2.0.3):
+    - AFNetworking/NSURLConnection (~> 2.0)
     - AFNetworking/NSURLSession (~> 2.0)
-  - AFNetworking (2.2.3):
+  - AFNetworking (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.2.3):
+  - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.2.3):
-    - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.2.3)
-  - AFNetworking/Security (2.2.3)
-  - AFNetworking/Serialization (2.2.3)
-  - AFNetworking/UIKit (2.2.3):
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CLLocationManager-blocks (1.1.0)
-  - Expecta (0.2.4)
-  - OHHTTPStubs (3.0.4)
-  - SSKeychain (1.2.2)
+  - CLLocationManager-blocks (1.3.2)
+  - RMDateSelectionViewController (1.3.0)
   - SVProgressHUD (1.0)
-  - TRVSMonitor (0.0.3)
   - UIAlertView-Blocks (1.0)
 
 DEPENDENCIES:
-  - AFNetworkActivityLogger (~> 2.0.2)
-  - AFNetworking (~> 2.2.1)
-  - CLLocationManager-blocks
-  - Expecta (~> 0.2.3)
-  - OHHTTPStubs (~> 3.0.4)
-  - SSKeychain (~> 1.2.2)
+  - AFNetworkActivityLogger (~> 2.0.3)
+  - AFNetworking (~> 2.4.1)
+  - CLLocationManager-blocks (~> 1.3.2)
+  - RMDateSelectionViewController (~> 1.3.0)
   - SVProgressHUD (~> 1.0)
-  - TRVSMonitor (~> 0.0.3)
-  - UIAlertView-Blocks
+  - UIAlertView-Blocks (~> 1.0)
 
 SPEC CHECKSUMS:
-  AFNetworkActivityLogger: 3d12891eb7cb77b4ad0f0b50fe5d877385bd135d
-  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
-  CLLocationManager-blocks: c351f294d26b7ed1c63cd6b5cba04bf21727c522
-  Expecta: 5c147dedfea5fbcf773995f7e65020abcc936ce5
-  OHHTTPStubs: 711cd3376438340d0c2538f66d6e9c1b3e8c5b7d
-  SSKeychain: 3d0b76c87e7b062a7ad1631a825fddec84367d44
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
-  TRVSMonitor: cc2b3d6f4cf18639464f6b8295f1b4722f4d4f14
-  UIAlertView-Blocks: f7be28a08e85ec21143951ec6797ca6474faf563
+  AFNetworkActivityLogger: d6a2d2755fada3a1fbf1f490ec0dd92224e092a4
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  CLLocationManager-blocks: 9e1da8264a297ede2ca71b29ff7827c87f40a4a8
+  RMDateSelectionViewController: b6e6724739c80c17af0fbb722793eb7f3b6eb4df
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  UIAlertView-Blocks: f3271e84372beb97aea115cd1fb26ae66457f12f
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

@@ -16,7 +16,7 @@
         _objectId = dict[@"_id"];
         _appInfoNumber = [dict[@"appInfoNumber"] unsignedIntegerValue];
         _title = dict[@"title"];
-        _description = dict[@"description"];
+        _textDescription = dict[@"description"];
     }
     return self;
 }

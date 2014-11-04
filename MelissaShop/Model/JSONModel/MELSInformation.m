@@ -16,7 +16,7 @@
     if(self=[super init]){
         _objectId = dict[@"_id"];
         _title = dict[@"title"];
-        _description = dict[@"description"];
+        _textDescription = dict[@"description"];
         _listImageObjectId = dict[@"listImageObjectId"];
         _detailImageObjectId = dict[@"detailImageObjectId"];
         _detailBottomImageObjectId = dict[@"detailBottomImageObjectId"];

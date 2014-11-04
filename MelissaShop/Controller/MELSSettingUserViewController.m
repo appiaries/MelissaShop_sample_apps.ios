@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 
 @property (nonatomic, strong) UIActionSheet *actionSheet;
 @property (nonatomic, strong) UIPickerView *pickerView;
+@property (nonatomic, strong) UIToolbar *toolbar;
 @property (strong, nonatomic) NSArray *addresses;
 
 @end
@@ -184,40 +185,76 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 
 -(void)showActionSheet
 {
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"" destructiveButtonTitle:nil otherButtonTitles:nil];
-    self.actionSheet.backgroundColor = [UIColor whiteColor];
-    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44.0f)];
-	toolBar.barStyle = UIBarStyleBlackOpaque;
-	[toolBar sizeToFit];
+    //ActionSheetを代替する
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        [self showAlertController];
+    } else {
+        self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"" destructiveButtonTitle:nil otherButtonTitles:nil];
+        self.actionSheet.backgroundColor = [UIColor whiteColor];
+        
+        [self makeActionSheetContents];
+        
+        // アクションシートへの埋め込みと表示
+        [self.actionSheet addSubview:self.toolbar];
+        [self.actionSheet addSubview:self.pickerView];
+        [self.actionSheet showInView:self.view];
+        [self.actionSheet setBounds:CGRectMake(0, 0, self.view.bounds.size.width, 464.0f)];
+    }
+}
+
+-(void)showAlertController
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"\n\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleActionSheet];
     
-	// ピッカーの作成
-    self.pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 44.0f, 0, 0)];
+    [self makeActionSheetContents];
+    
+    // AlertControllerへ埋め込む
+    [alertController.view addSubview:self.toolbar];
+    [alertController.view addSubview:self.pickerView];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)makeActionSheetContents
+{
+    // ピッカーの作成
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        self.pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 44.0f, 300, 100)];
+    } else {
+        self.pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 44.0f, 0, 0)];
+    }
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
     
-	// Cancelボタンの作成
-	UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDidPushPicker)];
-	
-	// フレキシブルスペースの作成
-	UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    //Toolbarの作成
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 44.0f)];
+    } else {
+        self.toolbar  = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44.0f)];
+        [self.toolbar sizeToFit];
+    }
+
+    // Cancelボタンの作成
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDidPushPicker)];
     
-	// Doneボタンの作成
-	UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneDidPushPicker)];
-	
-	NSArray *items = [NSArray arrayWithObjects:cancel, spacer, done, nil];
-	[toolBar setItems:items animated:YES];
-	
-	// アクションシートへの埋め込みと表示
-	[self.actionSheet addSubview:toolBar];
-	[self.actionSheet addSubview:self.pickerView];
-	[self.actionSheet showInView:self.view];
-	[self.actionSheet setBounds:CGRectMake(0, 0, self.view.bounds.size.width, 464.0f)];
+    // フレキシブルスペースの作成
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    // Doneボタンの作成
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneDidPushPicker)];
+    
+    NSArray *items = [NSArray arrayWithObjects:cancel, spacer, done, nil];
+    [self.toolbar setItems:items animated:YES];
 }
 
 -(void)cancelDidPushPicker
 {
     //閉じる
-    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    }
 }
 
 -(void)doneDidPushPicker
@@ -227,8 +264,12 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
     NSDictionary *parameters = @{@"address": self.addresses[row] ? :@""};
     [self saveUserPropertyWithParameter:parameters];
 
-    //閉じる
-    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        //閉じる
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    }
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

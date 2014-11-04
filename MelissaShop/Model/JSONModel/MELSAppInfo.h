@@ -28,7 +28,7 @@
 /**
  *  詳細
  */
-@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSString *textDescription;
 
 /**
  *  JSON→オブジェクト初期化用

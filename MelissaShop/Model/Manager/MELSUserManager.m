@@ -45,7 +45,7 @@ static NSString *const kMELSCollectionUserProperty = @"userProperty";
     self = [super init];
     if (self) {
         // 初期化処理
-        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager = [CLLocationManager updateManagerWithAccuracy:50.0 locationAge:15.0 authorizationDesciption:CLLocationUpdateAuthorizationDescriptionWhenInUse];
     }
     return self;
 }

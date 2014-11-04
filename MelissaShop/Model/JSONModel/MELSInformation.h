@@ -23,7 +23,7 @@
 /**
  *  詳細記述
  */
-@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSString *textDescription;
 
 /**
  *  リスト表示時の画像objectId (imageFileコレクションに紐づく)
