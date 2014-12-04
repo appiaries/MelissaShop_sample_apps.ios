@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -21,18 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiP-1d-oXA">
-                                <rect key="frame" x="31" y="405" width="258" height="48"/>
+                                <rect key="frame" x="31" y="383" width="258" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="アピアリーズでLOGIN" backgroundImage="btn_blue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9Mt-0T-pWC" kind="push" id="9vh-Wo-GFQ"/>
+                                    <segue destination="GYL-O2-Vyh" kind="push" id="aO8-Iw-9ye"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-hk-xrP">
-                                <rect key="frame" x="31" y="479" width="258" height="48"/>
+                                <rect key="frame" x="31" y="502" width="258" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="LOGINせずに使う" backgroundImage="btn_white">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,6 +45,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chara" translatesAutoresizingMaskIntoConstraints="NO" id="Ok8-b2-pkv">
                                 <rect key="frame" x="48" y="99" width="225" height="276"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8a-56-JHO">
+                                <rect key="frame" x="31" y="442" width="258" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="新規会員登録" backgroundImage="btn_blue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wip-4K-bOx" kind="push" id="pBI-ta-WBa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -371,36 +382,65 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcw-Dk-awQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="-1160"/>
+            <point key="canvasLocation" x="-689" y="-1160"/>
         </scene>
-        <!--ログイン情報入力-->
-        <scene sceneID="4C7-uq-kiC">
+        <!--ログイン-->
+        <scene sceneID="F64-Pi-g7i">
             <objects>
-                <viewController id="9Mt-0T-pWC" customClass="MELSLoginWebViewController" sceneMemberID="viewController">
+                <viewController id="GYL-O2-Vyh" customClass="MELSLoginFormViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Cc-hi-dUi"/>
-                        <viewControllerLayoutGuide type="bottom" id="L3h-z1-9Zf"/>
+                        <viewControllerLayoutGuide type="top" id="uTy-ie-9oN"/>
+                        <viewControllerLayoutGuide type="bottom" id="fNs-aY-0tn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c1E-4A-GMG">
+                    <view key="view" contentMode="scaleToFill" id="lNO-nU-AqH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-mN-rvE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-mN-frm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crv-lF-cWB">
+                                <rect key="frame" x="128" y="94" width="176" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <outlet property="delegate" destination="9Mt-0T-pWC" id="KAp-kh-MO7"/>
+                                    <outlet property="delegate" destination="GYL-O2-Vyh" id="TW3-Ug-EHs"/>
                                 </connections>
-                            </webView>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メールアドレス" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05q-ko-S4K">
+                                <rect key="frame" x="16" y="100" width="98" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBH-L2-1Y2">
+                                <rect key="frame" x="128" y="137" width="176" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GYL-O2-Vyh" id="9db-yI-dna"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-kX-ppF">
+                                <rect key="frame" x="16" y="143" width="70" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ログイン情報入力" id="piT-S5-IgW"/>
+                    <navigationItem key="navigationItem" title="ログイン" id="d2w-LU-91L">
+                        <barButtonItem key="rightBarButtonItem" title="ログイン" id="rxn-TB-Y6g">
+                            <connections>
+                                <action selector="loginButtonAction:" destination="GYL-O2-Vyh" id="dtg-Pk-UHT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="webview" destination="NQ6-mN-rvE" id="Z21-4I-kJ2"/>
+                        <outlet property="emailTextField" destination="crv-lF-cWB" id="00B-dj-p5Q"/>
+                        <outlet property="passwordTextField" destination="FBH-L2-1Y2" id="Op1-aw-3sV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aOt-fx-hkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAh-nR-t3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="156" y="-1160"/>
         </scene>
@@ -1086,6 +1126,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9L-fF-VjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="542" y="2374"/>
+        </scene>
+        <!--新規会員登録-->
+        <scene sceneID="wPw-Nx-ZQS">
+            <objects>
+                <viewController id="wip-4K-bOx" customClass="MELSRegistViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YtP-vw-vq8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ydn-IZ-xcj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vLK-hm-UI3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-44-tim">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-6W-Wo6">
+                                <rect key="frame" x="128" y="85" width="176" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wip-4K-bOx" id="hgX-yU-r14"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メールアドレス" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-IV-WKz">
+                                <rect key="frame" x="16" y="91" width="98" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-Ss-vrd">
+                                <rect key="frame" x="128" y="128" width="176" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wip-4K-bOx" id="sfw-5X-Cb4"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9A-Kq-4Mc">
+                                <rect key="frame" x="16" y="134" width="70" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="新規会員登録" id="hkg-IK-QlG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Gn-oM-aMs">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="wip-4K-bOx" id="d2M-Rm-Wwx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="IKj-6W-Wo6" id="pqC-uA-YJt"/>
+                        <outlet property="passwordTextField" destination="1bx-Ss-vrd" id="1BF-fe-QuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAs-Rd-4Cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="-1826"/>
         </scene>
     </scenes>
     <resources>

@@ -10,7 +10,6 @@
 #import "MELSAPIClient.h"
 #import "MELSUser.h"
 #import <CLLocationManager-blocks/CLLocationManager+blocks.h>
-#import <appiaries/AppiariesPush.h>
 
 /**
  *  コレクション名
@@ -20,6 +19,7 @@ static NSString *const kMELSCollectionUserProperty = @"userProperty";
 @interface MELSUserManager ()
 
 @property (readwrite) MELSUser *user;
+@property (readwrite, setter=setLoggedIn:) BOOL isLoggedIn;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSDate *lastAccessDate;
@@ -56,14 +56,78 @@ static NSString *const kMELSCollectionUserProperty = @"userProperty";
 }
 
 //--------------------------------------------------------------//
-#pragma mark Public method
+#pragma mark -- property
 //--------------------------------------------------------------//
 -(BOOL)isLoggedIn
 {
-    if ([MELSAPIClient sharedClient].accessToken.length > 0 && [MELSAPIClient sharedClient].storeToken.length > 0 && [[MELSAPIClient sharedClient].tokenExpireDate compare:[NSDate date]] == NSOrderedDescending) {
+    //User取得済みの場合、ログインとみなす
+    if (self.user) {
         return YES;
     }
     return NO;
+}
+
+//--------------------------------------------------------------//
+#pragma mark Public method
+//--------------------------------------------------------------//
+-(void)autoLoginWithCompletion:(void (^)(NSError *))block
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+    //AppUserClientの取得
+    APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
+    [api autoLoginWithSuccess:^(APISResponseObject *response) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //TODO: ユーザ情報の取得処理
+        ALog(@"%@", response.data);
+        ALog(@"%@", response.location);
+        
+        if (block) block(nil);
+    } failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        if (block) block(error);
+    }];
+}
+
+-(void)loginWithLoginId:(NSString *)loginId password:(NSString *)password completion:(void (^)(NSError *))block
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    //AppUserClientの取得
+    APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
+    //ログイン処理（自動ログインは常にYES）
+    [api loginWithLoginId:loginId password:password autoLogin:YES success:^(APISResponseObject *response) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //TODO: ユーザ情報の取得処理
+        ALog(@"%@", response.data);
+        ALog(@"%@", response.location);
+        
+        if (block) block(nil);
+    } failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        if (block) block(error);
+    }];
+}
+
+-(void)registWithUser:(MELSUser *)formUser completion:(void (^)(NSError *))block
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    //AppUserClientの取得
+    APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
+    
+    //会員登録処理
+    [api createAppUserWithLoginId:formUser.loginId password:formUser.password email:formUser.loginId attributes:nil success:^(APISResponseObject *response) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //TODO: ユーザ情報の取得処理
+        ALog(@"%@", response.data);
+        ALog(@"%@", response.location);
+        
+        if (block) block(nil);
+    } failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        if (block) block(error);
+    }];
 }
 
 -(void)logout
@@ -264,7 +328,8 @@ static NSString *const kMELSCollectionUserProperty = @"userProperty";
                                      @"lastLatitude": [NSNumber numberWithDouble:self.location.coordinate.latitude],
                                      @"lastLongitude": [NSNumber numberWithDouble:self.location.coordinate.longitude]
                                      };
-        [AppiariesPush sendDeviceToken:self.deviceToken dicAttr:parameters delegate:nil selector:nil];
+        APISPushAPIClient *api = [[APISSession sharedSession] createPushAPIClient];
+        [api registerDeviceToken:self.deviceToken attributes:parameters];
     }
 
 }

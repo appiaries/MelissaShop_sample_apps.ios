@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		97A65014F6194F18AC924E6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF189CB02FFD4CB3B3960B8D /* libPods.a */; };
+		9821EFA41A280DDF00FE334C /* AppiariesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */; };
+		9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA51A280E3C00FE334C /* QuartzCore.framework */; };
+		9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA71A280E4900FE334C /* MobileCoreServices.framework */; };
 		98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B7C191B7970003E6700 /* Foundation.framework */; };
 		98276B7F191B7970003E6700 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B7E191B7970003E6700 /* CoreGraphics.framework */; };
 		98276B81191B7970003E6700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B80191B7970003E6700 /* UIKit.framework */; };
@@ -23,6 +26,8 @@
 		98276BAB191B7970003E6700 /* MelissaShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276BAA191B7970003E6700 /* MelissaShopTests.m */; };
 		9853BF7619370081007762B0 /* MELSAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7519370081007762B0 /* MELSAppInfo.m */; };
 		9853BF7919370181007762B0 /* MELSAppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7819370181007762B0 /* MELSAppInfoManager.m */; };
+		985B67611A30A37500C9C2A9 /* MELSLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */; };
+		985B67641A30A39200C9C2A9 /* MELSRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */; };
 		987249151938A7F400F364E9 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987249141938A7F400F364E9 /* address.plist */; };
 		987D48D21929E9C30049F4EE /* MELSCouponDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987D48D11929E9C30049F4EE /* MELSCouponDetailViewCell.m */; };
 		98824856192499880027B931 /* MELSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98824855192499880027B931 /* MELSInformation.m */; };
@@ -32,7 +37,6 @@
 		98AF8CC2192CC8140077DBC3 /* MELSSettingUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC1192CC8140077DBC3 /* MELSSettingUserViewController.m */; };
 		98AF8CC5192CC8420077DBC3 /* MELSSettingAppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC4192CC8420077DBC3 /* MELSSettingAppInfoViewController.m */; };
 		98AF8CC8192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */; };
-		98C34071193DA6FC00674DAC /* appiaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C34070193DA6FC00674DAC /* appiaries.framework */; };
 		98E0BECF192A0BCB00F35B10 /* MELSCouponUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */; };
 		98E36EC4192200CE00807684 /* MELSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36EC3192200CE00807684 /* MELSUser.m */; };
 		98E36ECF192208B300807684 /* MELSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36ECE192208B300807684 /* MELSAPIClient.m */; };
@@ -68,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		6EC227D5AB504554BAB05128 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppiariesSDK.framework; sourceTree = "<group>"; };
+		9821EFA51A280E3C00FE334C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9821EFA71A280E4900FE334C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		98276B79191B7970003E6700 /* MelissaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelissaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98276B7C191B7970003E6700 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98276B7E191B7970003E6700 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +95,10 @@
 		9853BF7519370081007762B0 /* MELSAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAppInfo.m; sourceTree = "<group>"; };
 		9853BF7719370181007762B0 /* MELSAppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAppInfoManager.h; sourceTree = "<group>"; };
 		9853BF7819370181007762B0 /* MELSAppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAppInfoManager.m; sourceTree = "<group>"; };
+		985B675F1A30A37500C9C2A9 /* MELSLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSLoginFormViewController.h; sourceTree = "<group>"; };
+		985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSLoginFormViewController.m; sourceTree = "<group>"; };
+		985B67621A30A39200C9C2A9 /* MELSRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSRegistViewController.h; sourceTree = "<group>"; };
+		985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSRegistViewController.m; sourceTree = "<group>"; };
 		987249141938A7F400F364E9 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
 		987D48D01929E9C30049F4EE /* MELSCouponDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponDetailViewCell.h; sourceTree = "<group>"; };
 		987D48D11929E9C30049F4EE /* MELSCouponDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponDetailViewCell.m; sourceTree = "<group>"; };
@@ -105,7 +116,6 @@
 		98AF8CC4192CC8420077DBC3 /* MELSSettingAppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSSettingAppInfoViewController.m; sourceTree = "<group>"; };
 		98AF8CC6192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+GregorianCalendar.h"; sourceTree = "<group>"; };
 		98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+GregorianCalendar.m"; sourceTree = "<group>"; };
-		98C34070193DA6FC00674DAC /* appiaries.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = appiaries.framework; sourceTree = "<group>"; };
 		98E0BECD192A0BCB00F35B10 /* MELSCouponUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponUseViewController.h; sourceTree = "<group>"; };
 		98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponUseViewController.m; sourceTree = "<group>"; };
 		98E36EC2192200CE00807684 /* MELSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUser.h; sourceTree = "<group>"; };
@@ -157,7 +167,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C34071193DA6FC00674DAC /* appiaries.framework in Frameworks */,
+				9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */,
+				9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */,
+				9821EFA41A280DDF00FE334C /* AppiariesSDK.framework in Frameworks */,
 				98276B7F191B7970003E6700 /* CoreGraphics.framework in Frameworks */,
 				98276B81191B7970003E6700 /* UIKit.framework in Frameworks */,
 				98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */,
@@ -201,7 +213,9 @@
 		98276B7B191B7970003E6700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98C34070193DA6FC00674DAC /* appiaries.framework */,
+				9821EFA71A280E4900FE334C /* MobileCoreServices.framework */,
+				9821EFA51A280E3C00FE334C /* QuartzCore.framework */,
+				9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */,
 				98276B7C191B7970003E6700 /* Foundation.framework */,
 				98276B7E191B7970003E6700 /* CoreGraphics.framework */,
 				98276B80191B7970003E6700 /* UIKit.framework */,
@@ -264,6 +278,10 @@
 				98E604C31926FE4000E3495C /* MELSBaseViewController.m */,
 				98FFA9A21920D21F004C6536 /* MELSLoginViewController.h */,
 				98FFA9A31920D21F004C6536 /* MELSLoginViewController.m */,
+				985B675F1A30A37500C9C2A9 /* MELSLoginFormViewController.h */,
+				985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */,
+				985B67621A30A39200C9C2A9 /* MELSRegistViewController.h */,
+				985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */,
 				98FFA9B31920D82A004C6536 /* MELSLoginWebViewController.h */,
 				98FFA9B41920D82A004C6536 /* MELSLoginWebViewController.m */,
 				98FFA9AA1920D403004C6536 /* MELSHomeViewController.h */,
@@ -567,6 +585,7 @@
 				98E604CB192721D800E3495C /* MELSShop.m in Sources */,
 				98E604CE1927233B00E3495C /* MELSShopManager.m in Sources */,
 				98824856192499880027B931 /* MELSInformation.m in Sources */,
+				985B67611A30A37500C9C2A9 /* MELSLoginFormViewController.m in Sources */,
 				9853BF7619370081007762B0 /* MELSAppInfo.m in Sources */,
 				98FFA9C81920E636004C6536 /* MELSUserManager.m in Sources */,
 				98FFA9C11920DB8D004C6536 /* MELSCouponListViewController.m in Sources */,
@@ -584,6 +603,7 @@
 				98AF8CC2192CC8140077DBC3 /* MELSSettingUserViewController.m in Sources */,
 				98E36ECF192208B300807684 /* MELSAPIClient.m in Sources */,
 				98FFA9AF1920D474004C6536 /* MELSShopMapViewController.m in Sources */,
+				985B67641A30A39200C9C2A9 /* MELSRegistViewController.m in Sources */,
 				98F4C0CC1929C88900AE2644 /* MELSCouponManager.m in Sources */,
 				98276B8D191B7970003E6700 /* MELSAppDelegate.m in Sources */,
 				98FFA9B51920D82A004C6536 /* MELSLoginWebViewController.m in Sources */,

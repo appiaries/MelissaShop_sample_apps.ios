@@ -14,16 +14,36 @@
 @interface MELSUserManager : NSObject
 
 @property (readonly, nonatomic) MELSUser *user;
+@property (readonly, nonatomic) BOOL isLoggedIn;
+
+//TODO: deprecated
 @property (strong, nonatomic) NSData *deviceToken;
 
 +(MELSUserManager*)sharedManager;
 
 /**
- *  ログインしているか判定
+ *  自動ログイン処理
  *
- *  @return YES or NO
+ *  @param block NSError
  */
--(BOOL)isLoggedIn;
+-(void)autoLoginWithCompletion:(void (^)(NSError *error))block;
+
+/**
+ *  ログイン処理
+ *
+ *  @param loginId
+ *  @param password
+ *  @param block    
+ */
+-(void)loginWithLoginId:(NSString*)loginId password:(NSString*)password completion:(void (^)(NSError *error))block;
+
+/**
+ *  ユーザ登録処理
+ *
+ *  @param user  MELSUser
+ *  @param block NSError
+ */
+-(void)registWithUser:(MELSUser*)formUser completion:(void (^)(NSError *error))block;
 
 /**
  *  ログアウト処理

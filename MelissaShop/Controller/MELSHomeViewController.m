@@ -31,27 +31,27 @@ static NSString *const kCellSegue = @"InformationPushSegue";
     [super viewDidLoad];
     
     //ログインしていない場合、ログイン画面への遷移
-    if (![MELSUserManager sharedManager].isLoggedIn) {
-        //ログアウト処理を走らせる
-        [[MELSUserManager sharedManager]logout];
-        
-        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:MELSStoryboardIDLogin];
-        
-        //少し遅延させてモーダルを表示させる
-        double delayInSeconds = 0.1;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self.tabBarController presentViewController:viewController animated:YES completion:nil];
-        });
-    } else {
-        //ユーザ情報を取得
-        [[MELSUserManager sharedManager]getUserPropertyWithCompletion:^(NSError *error) {
-            if (!error && [MELSUserManager sharedManager].user != nil) {
-                //アクセス情報を記録
-                [[MELSUserManager sharedManager]updateLastAccessWithCompletion:nil];
-            }
-        }];
-    }
+//    if (![MELSUserManager sharedManager].isLoggedIn) {
+//        //ログアウト処理を走らせる
+//        [[MELSUserManager sharedManager]logout];
+//        
+//        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:MELSStoryboardIDLogin];
+//        
+//        //少し遅延させてモーダルを表示させる
+//        double delayInSeconds = 0.1;
+//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//            [self.tabBarController presentViewController:viewController animated:YES completion:nil];
+//        });
+//    } else {
+//        //ユーザ情報を取得
+//        [[MELSUserManager sharedManager]getUserPropertyWithCompletion:^(NSError *error) {
+//            if (!error && [MELSUserManager sharedManager].user != nil) {
+//                //アクセス情報を記録
+//                [[MELSUserManager sharedManager]updateLastAccessWithCompletion:nil];
+//            }
+//        }];
+//    }
     
     //NavigationBar
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"header"]];

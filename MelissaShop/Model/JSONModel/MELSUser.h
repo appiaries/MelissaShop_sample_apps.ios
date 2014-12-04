@@ -17,6 +17,17 @@ extern NSString *const kMELSUserProfileScope;
 @interface MELSUser : NSObject
 
 /**
+ *  ログインID
+ */
+@property (strong, nonatomic) NSString *loginId;
+
+/**
+ *  パスワード
+ */
+@property (strong, nonatomic) NSString *password;
+
+
+/**
  *  identifier
  */
 @property (strong, nonatomic) NSString *objectId;
