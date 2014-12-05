@@ -1101,15 +1101,15 @@
                                     <constraint firstAttribute="trailing" secondItem="OTt-OR-eDC" secondAttribute="trailing" id="HAi-z9-naf"/>
                                     <constraint firstItem="OTt-OR-eDC" firstAttribute="top" secondItem="xti-AS-EBt" secondAttribute="top" id="LtL-DQ-yJm"/>
                                     <constraint firstItem="OTt-OR-eDC" firstAttribute="leading" secondItem="xti-AS-EBt" secondAttribute="leading" id="buy-Kb-hHF"/>
-                                    <constraint firstItem="OTt-OR-eDC" firstAttribute="centerX" secondItem="xti-AS-EBt" secondAttribute="centerX" id="iwX-ia-Z8h"/>
                                     <constraint firstAttribute="bottom" secondItem="OTt-OR-eDC" secondAttribute="bottom" id="jIy-pF-4ni"/>
-                                    <constraint firstItem="OTt-OR-eDC" firstAttribute="centerY" secondItem="xti-AS-EBt" secondAttribute="centerY" id="jki-V5-SB7"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="S7a-t4-gPf" firstAttribute="top" secondItem="xti-AS-EBt" secondAttribute="bottom" id="8RA-uA-63e"/>
                             <constraint firstItem="xti-AS-EBt" firstAttribute="top" secondItem="dXl-zh-sca" secondAttribute="top" id="JYZ-7V-oeo"/>
+                            <constraint firstAttribute="trailing" secondItem="xti-AS-EBt" secondAttribute="trailing" id="maZ-15-fRM"/>
                             <constraint firstItem="xti-AS-EBt" firstAttribute="leading" secondItem="dXl-zh-sca" secondAttribute="leading" id="wpn-MV-USY"/>
                         </constraints>
                     </view>
@@ -1142,7 +1142,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-44-tim">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-6W-Wo6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@appiaries.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-6W-Wo6">
                                 <rect key="frame" x="128" y="85" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1155,16 +1155,41 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-Ss-vrd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-Ss-vrd">
                                 <rect key="frame" x="128" y="128" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="wip-4K-bOx" id="sfw-5X-Cb4"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9A-Kq-4Mc">
                                 <rect key="frame" x="16" y="134" width="70" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="19900508" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjl-Ny-Vaz">
+                                <rect key="frame" x="128" y="170" width="176" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wip-4K-bOx" id="z9T-ZM-UNe"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生年月日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="992-We-RbL">
+                                <rect key="frame" x="16" y="176" width="56" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LIT-lZ-w8f">
+                                <rect key="frame" x="176" y="213" width="81" height="29"/>
+                                <segments>
+                                    <segment title="女性"/>
+                                    <segment title="男性"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="性別" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-tt-Oqp">
+                                <rect key="frame" x="16" y="218" width="28" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1179,7 +1204,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateOfBirthTextField" destination="tjl-Ny-Vaz" id="GMX-ZI-r7t"/>
                         <outlet property="emailTextField" destination="IKj-6W-Wo6" id="pqC-uA-YJt"/>
+                        <outlet property="genderSegmentedControl" destination="LIT-lZ-w8f" id="4D2-JS-xcJ"/>
                         <outlet property="passwordTextField" destination="1bx-Ss-vrd" id="1BF-fe-QuW"/>
                     </connections>
                 </viewController>

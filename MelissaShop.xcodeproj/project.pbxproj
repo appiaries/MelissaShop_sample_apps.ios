@@ -24,6 +24,7 @@
 		98276BA1191B7970003E6700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B80191B7970003E6700 /* UIKit.framework */; };
 		98276BA9191B7970003E6700 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98276BA7191B7970003E6700 /* InfoPlist.strings */; };
 		98276BAB191B7970003E6700 /* MelissaShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276BAA191B7970003E6700 /* MelissaShopTests.m */; };
+		9847355C1A31E2BA003E39C6 /* MELSUserAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */; };
 		9853BF7619370081007762B0 /* MELSAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7519370081007762B0 /* MELSAppInfo.m */; };
 		9853BF7919370181007762B0 /* MELSAppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7819370181007762B0 /* MELSAppInfoManager.m */; };
 		985B67611A30A37500C9C2A9 /* MELSLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */; };
@@ -39,7 +40,6 @@
 		98AF8CC8192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */; };
 		98E0BECF192A0BCB00F35B10 /* MELSCouponUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */; };
 		98E36EC4192200CE00807684 /* MELSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36EC3192200CE00807684 /* MELSUser.m */; };
-		98E36ECF192208B300807684 /* MELSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36ECE192208B300807684 /* MELSAPIClient.m */; };
 		98E36ED819221CF400807684 /* NSURL+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36ED719221CF400807684 /* NSURL+dictionaryFromQueryString.m */; };
 		98E604C41926FE4000E3495C /* MELSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C31926FE4000E3495C /* MELSBaseViewController.m */; };
 		98E604C81927217A00E3495C /* MELSShopListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C71927217A00E3495C /* MELSShopListViewCell.m */; };
@@ -52,7 +52,6 @@
 		98FFA9A71920D2C6004C6536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98FFA9A91920D2C6004C6536 /* Localizable.strings */; };
 		98FFA9AC1920D403004C6536 /* MELSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */; };
 		98FFA9AF1920D474004C6536 /* MELSShopMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AE1920D474004C6536 /* MELSShopMapViewController.m */; };
-		98FFA9B51920D82A004C6536 /* MELSLoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9B41920D82A004C6536 /* MELSLoginWebViewController.m */; };
 		98FFA9B81920D8CE004C6536 /* MELSInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9B71920D8CE004C6536 /* MELSInformationViewController.m */; };
 		98FFA9BE1920DAC7004C6536 /* MELSShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9BD1920DAC7004C6536 /* MELSShopListViewController.m */; };
 		98FFA9C11920DB8D004C6536 /* MELSCouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C01920DB8D004C6536 /* MELSCouponListViewController.m */; };
@@ -91,6 +90,8 @@
 		98276BA6191B7970003E6700 /* MelissaShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MelissaShopTests-Info.plist"; sourceTree = "<group>"; };
 		98276BA8191B7970003E6700 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98276BAA191B7970003E6700 /* MelissaShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MelissaShopTests.m; sourceTree = "<group>"; };
+		9847355A1A31E2BA003E39C6 /* MELSUserAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUserAttribute.h; sourceTree = "<group>"; };
+		9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSUserAttribute.m; sourceTree = "<group>"; };
 		9853BF7419370081007762B0 /* MELSAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAppInfo.h; sourceTree = "<group>"; };
 		9853BF7519370081007762B0 /* MELSAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAppInfo.m; sourceTree = "<group>"; };
 		9853BF7719370181007762B0 /* MELSAppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAppInfoManager.h; sourceTree = "<group>"; };
@@ -120,8 +121,6 @@
 		98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponUseViewController.m; sourceTree = "<group>"; };
 		98E36EC2192200CE00807684 /* MELSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUser.h; sourceTree = "<group>"; };
 		98E36EC3192200CE00807684 /* MELSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSUser.m; sourceTree = "<group>"; };
-		98E36ECD192208B300807684 /* MELSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAPIClient.h; sourceTree = "<group>"; };
-		98E36ECE192208B300807684 /* MELSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAPIClient.m; sourceTree = "<group>"; };
 		98E36ED619221CF400807684 /* NSURL+dictionaryFromQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+dictionaryFromQueryString.h"; sourceTree = "<group>"; };
 		98E36ED719221CF400807684 /* NSURL+dictionaryFromQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+dictionaryFromQueryString.m"; sourceTree = "<group>"; };
 		98E604C21926FE4000E3495C /* MELSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSBaseViewController.h; sourceTree = "<group>"; };
@@ -146,8 +145,6 @@
 		98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSHomeViewController.m; sourceTree = "<group>"; };
 		98FFA9AD1920D474004C6536 /* MELSShopMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopMapViewController.h; sourceTree = "<group>"; };
 		98FFA9AE1920D474004C6536 /* MELSShopMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShopMapViewController.m; sourceTree = "<group>"; };
-		98FFA9B31920D82A004C6536 /* MELSLoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSLoginWebViewController.h; sourceTree = "<group>"; };
-		98FFA9B41920D82A004C6536 /* MELSLoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSLoginWebViewController.m; sourceTree = "<group>"; };
 		98FFA9B61920D8CE004C6536 /* MELSInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSInformationViewController.h; sourceTree = "<group>"; };
 		98FFA9B71920D8CE004C6536 /* MELSInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSInformationViewController.m; sourceTree = "<group>"; };
 		98FFA9BC1920DAC7004C6536 /* MELSShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopListViewController.h; sourceTree = "<group>"; };
@@ -282,8 +279,6 @@
 				985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */,
 				985B67621A30A39200C9C2A9 /* MELSRegistViewController.h */,
 				985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */,
-				98FFA9B31920D82A004C6536 /* MELSLoginWebViewController.h */,
-				98FFA9B41920D82A004C6536 /* MELSLoginWebViewController.m */,
 				98FFA9AA1920D403004C6536 /* MELSHomeViewController.h */,
 				98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */,
 				98FFA9B61920D8CE004C6536 /* MELSInformationViewController.h */,
@@ -313,7 +308,6 @@
 			children = (
 				98FFA9C51920E5FB004C6536 /* Manager */,
 				98FFA9CA1920EE39004C6536 /* JSONModel */,
-				98E36ECC1922086900807684 /* APIClient */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,15 +353,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		98E36ECC1922086900807684 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				98E36ECD192208B300807684 /* MELSAPIClient.h */,
-				98E36ECE192208B300807684 /* MELSAPIClient.m */,
-			);
-			path = APIClient;
-			sourceTree = "<group>";
-		};
 		98E36ED519221CD000807684 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +386,8 @@
 			children = (
 				98E36EC2192200CE00807684 /* MELSUser.h */,
 				98E36EC3192200CE00807684 /* MELSUser.m */,
+				9847355A1A31E2BA003E39C6 /* MELSUserAttribute.h */,
+				9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */,
 				98824854192499880027B931 /* MELSInformation.h */,
 				98824855192499880027B931 /* MELSInformation.m */,
 				98E604C9192721D800E3495C /* MELSShop.h */,
@@ -580,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9847355C1A31E2BA003E39C6 /* MELSUserAttribute.m in Sources */,
 				98FFA9B81920D8CE004C6536 /* MELSInformationViewController.m in Sources */,
 				98FFA9AC1920D403004C6536 /* MELSHomeViewController.m in Sources */,
 				98E604CB192721D800E3495C /* MELSShop.m in Sources */,
@@ -601,12 +589,10 @@
 				98FFA9BE1920DAC7004C6536 /* MELSShopListViewController.m in Sources */,
 				98AF8CC5192CC8420077DBC3 /* MELSSettingAppInfoViewController.m in Sources */,
 				98AF8CC2192CC8140077DBC3 /* MELSSettingUserViewController.m in Sources */,
-				98E36ECF192208B300807684 /* MELSAPIClient.m in Sources */,
 				98FFA9AF1920D474004C6536 /* MELSShopMapViewController.m in Sources */,
 				985B67641A30A39200C9C2A9 /* MELSRegistViewController.m in Sources */,
 				98F4C0CC1929C88900AE2644 /* MELSCouponManager.m in Sources */,
 				98276B8D191B7970003E6700 /* MELSAppDelegate.m in Sources */,
-				98FFA9B51920D82A004C6536 /* MELSLoginWebViewController.m in Sources */,
 				98FFA9C41920DBDE004C6536 /* MELSCouponDetailViewController.m in Sources */,
 				98E604C41926FE4000E3495C /* MELSBaseViewController.m in Sources */,
 				988248591924A8F60027B931 /* MELSInformationManager.m in Sources */,

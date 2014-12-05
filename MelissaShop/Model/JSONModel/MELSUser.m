@@ -9,28 +9,34 @@
 #import "MELSUser.h"
 #import "NSDateFormatter+GregorianCalendar.h"
 
-/**
- *  性別、生年月日のProfileAPIから許可を得るための設定
- */
-NSString *const kMELSUserProfileScope = @"gender date_of_birth";
 
 @implementation MELSUser
 
 -(id)initWithDict:(NSDictionary *)dict
 {
     if(self=[super init]){
-        _objectId = dict[@"_id"];
-        _gender = dict[@"gender"];
+        //AppUserを作成する
+        APISAppUser *appUser = [[APISAppUser alloc]initFromDictionary:dict];
+        
+        //AppUserからMELSUserへ置き換える
+        self.id = appUser.id;
+        self.loginId = appUser.loginId;
+        self.password = appUser.password;
+        self.email = appUser.email;
+        if ([appUser.attributes objectForKey:@"gender"] != nil) {
+            self.gender = [appUser.attributes objectForKey:@"gender"];
+        }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithGregorianCalendar];
         [dateFormatter setDateFormat:@"yyyyMMdd"];
-        _dateOfBirth = [dateFormatter dateFromString:dict[@"date_of_birth"]];
+        if ([appUser.attributes objectForKey:@"date_of_birth"] != nil) {
+            self.dateOfBirth = [dateFormatter dateFromString:[appUser.attributes objectForKey:@"date_of_birth"]];
+        }
     }
     return self;
 }
 
 -(void)updatePropertyWithDict:(NSDictionary*)dict
 {
-    _propertyObjectId = dict[@"_id"];
     _address = dict[@"address"];
     _favoriteFood = dict[@"favoriteFood"];
     NSTimeInterval lastAccessDateInterval = [dict[@"lastAccessDate"] doubleValue];

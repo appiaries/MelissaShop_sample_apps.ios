@@ -19,13 +19,19 @@ static NSString *const MELSAPISAppToken = @"app7835df55aa831ef1387e2e4543";
  */
 static NSString *const MELSAPISAppId = @"melissa_shop";
 /**
- * Appiaries クライアントID
- */
-static NSString *const MELSAPISClientId = @"b4335bed6a0c8bf";
-/**
  * Appiaries datastore ID
  */
 static NSString *const MELSAPISDatastoreId = @"appiaries_sample";
+
+/**
+ * Appiaries datastore file API URL
+ */
+static NSString *const MELSFileUrlBase = @"https://api-datastore.appiaries.com/v1/bin";
+
+/**
+ * 画像を保存しているcollectionId
+ */
+static NSString *const MELSImageCollectionId = @"imageFile";
 
 #pragma mark - UIStoryboard name
 static NSString *const MELSStoryboardMain = @"Main";

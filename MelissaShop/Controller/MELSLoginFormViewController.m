@@ -69,7 +69,7 @@
         [self.passwordTextField becomeFirstResponder];
     }else if (textField == self.passwordTextField){
         [textField resignFirstResponder];
-        [self loginButtonAction:self.passwordTextField];
+        [self loginButtonAction:nil];
     } else {
         [textField resignFirstResponder];
     }

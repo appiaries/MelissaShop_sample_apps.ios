@@ -8,13 +8,18 @@
 
 #import "MELSRegistViewController.h"
 #import "MELSUserManager.h"
-#import "MELSUser.h"
+#import "MELSUserAttribute.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "NSDateFormatter+GregorianCalendar.h"
 
 @interface MELSRegistViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedControl;
+
+@property (strong, nonatomic) NSString *gender;
 
 - (IBAction)saveButtonAction:(id)sender;
 
@@ -31,6 +36,9 @@
     //編集された際に呼び出される
     [self.emailTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    [self.genderSegmentedControl addTarget:self action:@selector(changeGender:) forControlEvents:UIControlEventValueChanged];
+    self.gender = @"female";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -48,12 +56,15 @@
 - (IBAction)saveButtonAction:(id)sender {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
 
-    MELSUser *user = [MELSUser new];
-    user.loginId = self.emailTextField.text;
-    user.password = self.passwordTextField.text;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithGregorianCalendar];
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    
+    MELSUserAttribute *userAttribute = [[MELSUserAttribute alloc]init];
+    userAttribute.dateOfBirth = [dateFormatter dateFromString:self.dateOfBirthTextField.text];
+    userAttribute.gender = self.gender;
     
     //会員登録
-    [[MELSUserManager sharedManager] registWithUser:user completion:^(NSError *error) {
+    [[MELSUserManager sharedManager] registWithLoginId:self.emailTextField.text password:self.passwordTextField.text attribute:userAttribute completion:^(NSError *error) {
         [SVProgressHUD dismiss];
         if (error) {
             //エラー表示
@@ -74,8 +85,10 @@
     if (textField == self.emailTextField) {
         [self.passwordTextField becomeFirstResponder];
     }else if (textField == self.passwordTextField){
+        [self.dateOfBirthTextField becomeFirstResponder];
+    }else if (textField == self.dateOfBirthTextField){
         [textField resignFirstResponder];
-        [self saveButtonAction:self.passwordTextField];
+        [self saveButtonAction:nil];
     } else {
         [textField resignFirstResponder];
     }
@@ -95,5 +108,21 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
     }
 }
+
+- (void)changeGender:(id)sender
+{
+    switch (self.genderSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            self.gender = @"female";
+            break;
+        case 1:
+            self.gender = @"male";
+            break;
+        default:
+            self.gender = @"female";
+            break;
+    }
+}
+
 
 @end

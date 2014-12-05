@@ -7,7 +7,6 @@
 //
 
 #import "MELSInformationManager.h"
-#import "MELSAPIClient.h"
 #import "MELSInformation.h"
 
 /**
@@ -57,29 +56,33 @@ static NSString *const kMELSCollectionInformation = @"information";
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
-    //Datastoreの条件を指定します。今回は絞込条件なし、データ作成順にソートする
-    NSDictionary *parameters = @{@"order": @"createdAt"};
+    //条件を指定します。今回は絞込条件なし、データ作成順にソートする
+    APISQueryCondition *query = [[APISQueryCondition alloc] init];
+//    NSDictionary *parameters = @{@"order": @"createdAt"};
     
-    //データストアからHomeの情報を返す
+    //JSON API Clientから検索を呼び出す
     __weak typeof(self) weakSelf = self;
-    [[MELSAPIClient sharedClient]searchDataStoreAPIWithCollection:kMELSCollectionInformation conditions:nil paramerters:parameters completion:^(NSDictionary *results, NSError *error) {
-        ALog(@"%@", results);
-        if (results && [results isKindOfClass:[NSDictionary class]]) {
+    APISJsonAPIClient *api = [[APISSession sharedSession] createJsonAPIClientWithCollectionId:kMELSCollectionInformation];
+    [api searchJsonObjectsWithQueryCondition:query
+        success:^(APISResponseObject *response) {
             //結果は「_objs」の配列で取得できる
-            NSArray *objs = [results objectForKey:@"_objs"];
+            NSArray *objs = [response.data objectForKey:@"_objs"];
             if ([objs isKindOfClass:[NSArray class]]) {
-                //自身のManagerで保持している配列を一旦削除する
-                [weakSelf.collections removeAllObjects];
+                NSMutableArray *array = [NSMutableArray new];
                 //配列をループで回してMELSInformationの配列を作成する
                 for (NSDictionary *v in objs) {
                     MELSInformation *information = [[MELSInformation alloc]initWithDict:v];
-                    [weakSelf.collections addObject:information];
+                    [array addObject:information];
                 }
+                weakSelf.collections = [array mutableCopy];
             }
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(nil);
+        } failure:^(NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(error);
         }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (block) block(error);
-    }];
+    ];
 }
 
 @end

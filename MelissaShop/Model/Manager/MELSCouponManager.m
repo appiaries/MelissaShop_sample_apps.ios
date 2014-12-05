@@ -7,7 +7,6 @@
 //
 
 #import "MELSCouponManager.h"
-#import "MELSAPIClient.h"
 #import "MELSCoupon.h"
 
 /**
@@ -57,29 +56,33 @@ static NSString *const kMELSCollectionCoupon = @"coupon";
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSDictionary *parameters = @{@"order": @"createdAt"};
+    //条件を指定します。今回は絞込条件なし、データ作成順にソートする
+    APISQueryCondition *query = [[APISQueryCondition alloc] init];
+    //    NSDictionary *parameters = @{@"order": @"createdAt"};
     
-    //有効期限以降のデータを取得する
-    NSTimeInterval nowInterval = [[NSDate date] timeIntervalSince1970];
-    NSString *conditionString = [NSString stringWithFormat:@"expireDate.gte.%.fn", nowInterval];
-    NSArray *conditions = @[conditionString];
-    
+    //JSON API Clientから検索を呼び出す
     __weak typeof(self) weakSelf = self;
-    [[MELSAPIClient sharedClient]searchDataStoreAPIWithCollection:kMELSCollectionCoupon conditions:conditions paramerters:parameters completion:^(NSDictionary *results, NSError *error) {
-        ALog(@"%@", results);
-        if (results && [results isKindOfClass:[NSDictionary class]]) {
-            NSArray *objs = [results objectForKey:@"_objs"];
+    APISJsonAPIClient *api = [[APISSession sharedSession] createJsonAPIClientWithCollectionId:kMELSCollectionCoupon];
+    [api searchJsonObjectsWithQueryCondition:query
+        success:^(APISResponseObject *response) {
+            //結果は「_objs」の配列で取得できる
+            NSArray *objs = [response.data objectForKey:@"_objs"];
             if ([objs isKindOfClass:[NSArray class]]) {
-                [weakSelf.collections removeAllObjects];
+                NSMutableArray *array = [NSMutableArray new];
+                //配列をループで回してMELSInformationの配列を作成する
                 for (NSDictionary *v in objs) {
                     MELSCoupon *coupon = [[MELSCoupon alloc]initWithDict:v];
-                    [weakSelf.collections addObject:coupon];
+                    [array addObject:coupon];
                 }
+                weakSelf.collections = [array mutableCopy];
             }
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(nil);
+        } failure:^(NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(error);
         }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (block) block(error);
-    }];
+    ];
 }
 
 

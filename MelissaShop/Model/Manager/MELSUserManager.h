@@ -8,15 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class MELSUser;
+@class MELSUserAttribute;
 @class CLLocation;
 
 @interface MELSUserManager : NSObject
 
-@property (readonly, nonatomic) MELSUser *user;
+@property (readonly, nonatomic) MELSUserAttribute *userAttribute;
 @property (readonly, nonatomic) BOOL isLoggedIn;
-
-//TODO: deprecated
 @property (strong, nonatomic) NSData *deviceToken;
 
 +(MELSUserManager*)sharedManager;
@@ -40,10 +38,12 @@
 /**
  *  ユーザ登録処理
  *
- *  @param user  MELSUser
- *  @param block NSError
+ *  @param loginId
+ *  @param password
+ *  @param userAttribute
+ *  @param block
  */
--(void)registWithUser:(MELSUser*)formUser completion:(void (^)(NSError *error))block;
+-(void)registWithLoginId:(NSString*)loginId password:(NSString*)password attribute:(MELSUserAttribute*)userAttribute completion:(void (^)(NSError *error))block;
 
 /**
  *  ログアウト処理
@@ -51,45 +51,17 @@
 -(void)logout;
 
 /**
- *  Profile情報を取得
- *
- *  @param block NSError
- */
--(void)getUserProfileWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  ユーザ属性情報を取得
- *
- *  @param block NSError
- */
--(void)getUserPropertyWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  ユーザ属性情報を作成
- *
- *  @param block NSError
- */
--(void)createUserPropertyWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  アクセス情報を取得
+ *  デバイストークン情報を取得
  *
  *  @param device token
  */
 -(void)lastAccessWithDevToken:(NSData*)devToken;
 
 /**
- *  アクセス情報を更新
- *
- *  @param block NSError
- */
--(void)updateLastAccessWithCompletion:(void (^)(NSError *error))block;
-
-/**
  *  ユーザ属性情報を更新
  *
  *  @param block NSError
  */
--(void)updateUserPropertyWithParameters:(NSDictionary*)parameters completion:(void (^)(NSError *error))block;
+-(void)updateUserAttribute:(MELSUserAttribute*)userAttribute completion:(void (^)(NSError *error))block;
 
 @end

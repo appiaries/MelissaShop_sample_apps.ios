@@ -1,15 +1,15 @@
 //
-//  MELSUser.h
+//  MELSUserAttribute.h
 //  MelissaShop
 //
-//  Created by 植田 洋次 on 2014/05/13.
+//  Created by 植田 洋次 on 2014/12/05.
 //  Copyright (c) 2014年 Appiaries Corporation. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MELSUser : APISAppUser
+@interface MELSUserAttribute : NSObject
 
 /**
  *  性別 (male, female, other)
@@ -47,22 +47,24 @@
 @property (strong, nonatomic) CLLocation *lastLocation;
 
 /**
- *  PUSH通知用のデバイストークン
- */
-@property (strong, nonatomic) NSString *deviceToken;
-
-/**
  *  JSON→オブジェクト初期化用
  *
- *  @param dict JSONのAppUserオブジェクト
+ *  @param dict JSONのAppUser attributeオブジェクト
  */
 -(id)initWithDict:(NSDictionary*)dict;
 
 /**
- *  JSON→属性情報の更新用
+ *  MELSUserAttributeをdictionaryで返す
  *
- *  @param dict JSONのAppUserオブジェクト
+ *  @return NSDictionary
  */
--(void)updatePropertyWithDict:(NSDictionary*)dict;
+-(NSDictionary*)dictionaryWithUserAttribute;
+
+/**
+ *  MELSUserAttributeを一度に更新する
+ *
+ *  @param userAttribute
+ */
+-(void)updateIfExistsUserAttribute:(MELSUserAttribute*)userAttribute;
 
 @end
