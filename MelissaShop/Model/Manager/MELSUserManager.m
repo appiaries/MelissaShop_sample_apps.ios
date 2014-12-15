@@ -54,7 +54,7 @@
 -(BOOL)isLoggedIn
 {
     //User取得済みの場合、ログインとみなす
-    if ([APISSession sharedSession].appUser) {
+    if ([APISSession sharedSession].isLoggedIn) {
         return YES;
     }
     return NO;
@@ -71,15 +71,15 @@
     APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
     [api autoLoginWithSuccess:^(APISResponseObject *response) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
+        ALog(@"%@", response.data);
         //属性データを変換して保持する
-        if ([response.data objectForKey:@"_objs"] != nil) {
-            NSDictionary *attribute = [[response.data objectForKey:@"_objs"] objectForKey:@"attributes"];
-            [self successLoginWithAttribute:attribute];
+        if ([response.data objectForKey:@"_id"] != nil) {
+            [self successLoginWithAttribute:response.data];
         }
         if (block) block(nil);
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        ALog(@"%@", error);
         if (block) block(error);
     }];
 }
@@ -93,15 +93,15 @@
     //ログイン処理（自動ログインは常にYES）
     [api loginWithLoginId:loginId password:password autoLogin:YES success:^(APISResponseObject *response) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
+        ALog(@"%@", response.data);
         //属性データを変換して保持する
-        if ([response.data objectForKey:@"_objs"] != nil) {
-            NSDictionary *attribute = [[response.data objectForKey:@"_objs"] objectForKey:@"attributes"];
-            [self successLoginWithAttribute:attribute];
+        if ([response.data objectForKey:@"_id"] != nil) {
+            [self successLoginWithAttribute:response.data];
         }
         if (block) block(nil);
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        ALog(@"%@", error);
         if (block) block(error);
     }];
 }
@@ -119,25 +119,34 @@
     //会員登録処理
     [api createAppUserWithLoginId:loginId password:password email:loginId attributes:attributes success:^(APISResponseObject *response) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        ALog(@"%@", response.data);
         
         //属性データを変換して保持する
-        if ([response.data objectForKey:@"_objs"] != nil) {
-            NSDictionary *attribute = [[response.data objectForKey:@"_objs"] objectForKey:@"attributes"];
-            [self successLoginWithAttribute:attribute];
+        if ([response.data objectForKey:@"_id"] != nil) {
+            [self successLoginWithAttribute:response.data];
         }
         if (block) block(nil);
     } failure:^(NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        ALog(@"%@", error);
         if (block) block(error);
     }];
 }
 
 -(void)logout
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     //AppUserClientの取得
     APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
-    [api logout];
-    self.userAttribute = nil;
+    [api logoutWithSuccess:^(APISResponseObject *response) {
+        //ログアウト後、属性情報などを端末から削除
+        [APISSession sharedSession].appUser = nil;
+        self.userAttribute = nil;
+    } failure:^(NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        ALog(@"%@", error);
+    }];
 }
 
 -(void)updateUserAttribute:(MELSUserAttribute *)userAttribute completion:(void (^)(NSError *))block
@@ -158,9 +167,8 @@
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             
             //属性データを変換して保持する
-            if ([response.data objectForKey:@"_objs"] != nil) {
-                NSDictionary *attribute = [[response.data objectForKey:@"_objs"] objectForKey:@"attributes"];
-                [self successLoginWithAttribute:attribute];
+            if ([response.data objectForKey:@"_id"] != nil) {
+                [self successLoginWithAttribute:response.data];
             }
             if (block) block(nil);
         
@@ -197,9 +205,27 @@
 
 -(void)successLoginWithAttribute:(NSDictionary*)attribute
 {
-    //属性情報を更新する
-    if (attribute != nil) {
-        self.userAttribute = [[MELSUserAttribute alloc]initWithDict:attribute];
+    if ([APISSession sharedSession].isLoggedIn) {
+        if ([attribute objectForKey:@"email"] != nil) {
+            //属性情報が入っている場合
+            self.userAttribute = [[MELSUserAttribute alloc]initWithDict:attribute];
+            [self setUserAttributeOther];
+        } else {
+            //属性情報が入っていない場合は会員情報を取得
+            __weak typeof(self) weakSelf = self;
+            APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
+            [api retrieveAppUserWithId:[APISSession sharedSession].appUser.id success:^(APISResponseObject *response) {
+                weakSelf.userAttribute = [[MELSUserAttribute alloc]initWithDict:response.data];
+                [weakSelf setUserAttributeOther];
+            } failure:^(NSError *error) {
+            }];
+        }
+    }
+}
+
+-(void)setUserAttributeOther
+{
+    if (self.userAttribute) {
         //最終アクセス日時を更新
         self.userAttribute.lastAccessDate = [NSDate date];
         //位置情報

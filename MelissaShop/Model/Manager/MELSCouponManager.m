@@ -56,9 +56,8 @@ static NSString *const kMELSCollectionCoupon = @"coupon";
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    //条件を指定します。今回は絞込条件なし、データ作成順にソートする
+    //条件を指定します。今回は絞込条件なし
     APISQueryCondition *query = [[APISQueryCondition alloc] init];
-    //    NSDictionary *parameters = @{@"order": @"createdAt"};
     
     //JSON API Clientから検索を呼び出す
     __weak typeof(self) weakSelf = self;

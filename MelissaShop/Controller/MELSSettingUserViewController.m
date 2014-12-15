@@ -252,7 +252,7 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
     //住所保存処理
     NSInteger row = [self.pickerView selectedRowInComponent:0];
     MELSUserAttribute *attribute = [[MELSUserAttribute alloc] init];
-    attribute.favoriteFood = self.addresses[row] ? :@"";
+    attribute.address = self.addresses[row] ? :@"";
     __weak typeof(self) weakSelf = self;
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
