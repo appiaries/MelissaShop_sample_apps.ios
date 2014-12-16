@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		97A65014F6194F18AC924E6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF189CB02FFD4CB3B3960B8D /* libPods.a */; };
-		9821EFA41A280DDF00FE334C /* AppiariesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */; };
+		982178A11A3FD4D00047A9D0 /* AppiariesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */; };
 		9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA51A280E3C00FE334C /* QuartzCore.framework */; };
 		9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA71A280E4900FE334C /* MobileCoreServices.framework */; };
 		98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B7C191B7970003E6700 /* Foundation.framework */; };
@@ -71,7 +71,7 @@
 
 /* Begin PBXFileReference section */
 		6EC227D5AB504554BAB05128 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppiariesSDK.framework; sourceTree = "<group>"; };
+		982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppiariesSDK.framework; sourceTree = "<group>"; };
 		9821EFA51A280E3C00FE334C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9821EFA71A280E4900FE334C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		98276B79191B7970003E6700 /* MelissaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelissaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,9 +166,9 @@
 			files = (
 				9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */,
 				9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */,
-				9821EFA41A280DDF00FE334C /* AppiariesSDK.framework in Frameworks */,
 				98276B7F191B7970003E6700 /* CoreGraphics.framework in Frameworks */,
 				98276B81191B7970003E6700 /* UIKit.framework in Frameworks */,
+				982178A11A3FD4D00047A9D0 /* AppiariesSDK.framework in Frameworks */,
 				98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */,
 				97A65014F6194F18AC924E6C /* libPods.a in Frameworks */,
 			);
@@ -210,9 +210,9 @@
 		98276B7B191B7970003E6700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */,
 				9821EFA71A280E4900FE334C /* MobileCoreServices.framework */,
 				9821EFA51A280E3C00FE334C /* QuartzCore.framework */,
-				9821EFA31A280DDF00FE334C /* AppiariesSDK.framework */,
 				98276B7C191B7970003E6700 /* Foundation.framework */,
 				98276B7E191B7970003E6700 /* CoreGraphics.framework */,
 				98276B80191B7970003E6700 /* UIKit.framework */,

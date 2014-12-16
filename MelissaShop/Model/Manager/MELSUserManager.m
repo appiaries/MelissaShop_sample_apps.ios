@@ -66,7 +66,7 @@
 -(void)autoLoginWithCompletion:(void (^)(NSError *))block
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-
+    
     //AppUserClientの取得
     APISAppUserAPIClient *api = [[APISSession sharedSession] createAppUserAPIClient];
     [api autoLoginWithSuccess:^(APISResponseObject *response) {
