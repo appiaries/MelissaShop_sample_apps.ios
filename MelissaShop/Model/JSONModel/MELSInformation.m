@@ -7,7 +7,6 @@
 //
 
 #import "MELSInformation.h"
-#import "MELSAPIClient.h"
 
 @implementation MELSInformation
 
@@ -25,16 +24,21 @@
         
         //画像のIDが入っている場合は、URLに変換したデータを保持する
         if (_listImageObjectId.length > 0) {
-            _listImageUrl = [MELSAPIClient getImageFileUrlWithObjectId:_listImageObjectId];
+            _listImageUrl = [MELSInformation getImageFileUrlWithObjectId:_listImageObjectId];
         }
         if (_detailImageObjectId.length > 0) {
-            _detailImageUrl = [MELSAPIClient getImageFileUrlWithObjectId:_detailImageObjectId];
+            _detailImageUrl = [MELSInformation getImageFileUrlWithObjectId:_detailImageObjectId];
         }
         if (_detailBottomImageObjectId.length > 0) {
-            _detailBottomImageUrl = [MELSAPIClient getImageFileUrlWithObjectId:_detailBottomImageObjectId];
+            _detailBottomImageUrl = [MELSInformation getImageFileUrlWithObjectId:_detailBottomImageObjectId];
         }
     }
     return self;
+}
+
++(NSString*)getImageFileUrlWithObjectId:(NSString*)objectId
+{
+    return [NSString stringWithFormat:@"%@/%@/%@/%@/%@/_bin", MELSFileUrlBase, MELSAPISDatastoreId, MELSAPISAppId, MELSImageCollectionId, objectId];
 }
 
 @end

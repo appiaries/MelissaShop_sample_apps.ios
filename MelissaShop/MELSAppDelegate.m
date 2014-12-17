@@ -9,8 +9,6 @@
 #import "MELSAppDelegate.h"
 #import "MELSUserManager.h"
 #import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
-#import <appiaries/AppiariesPush.h>
-#import <appiaries/AppiariesEntity.h>
 
 @implementation MELSAppDelegate
 
@@ -22,30 +20,37 @@
     [[AFNetworkActivityLogger sharedLogger] startLogging];
 #endif
     
-    //PUSH通知 APIS Push通知初期化
-    [AppiariesPush initialize:MELSAPISDatastoreId appliId:MELSAPISAppId appliToken:MELSAPISAppToken];
+    //AppiariesSDKのセッションを初期化する
+    [[APISSession sharedSession] configureWithDatastoreId:MELSAPISDatastoreId applicationId:MELSAPISAppId applicationToken:MELSAPISAppToken];
     
     //PUSH通知処理
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        // iOS8以降のプッシュ通知登録処理
         UIUserNotificationType types = UIUserNotificationTypeBadge |  UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
         UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
+        // iOS8以前のプッシュ通知登録処理
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
     }
+    
     NSDictionary *notificationUserInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if(notificationUserInfo){
-        //通知＆バッジを消す（アプリ停止時）
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        
         //開封通知
-        [self sendOpendAPISWithUserInfo:notificationUserInfo];
+        [self showPushNotificationAlertViewIfNeeded:notificationUserInfo];
     }
     
     //アプリ全体のView設定
     [self viewConfigurations];
+    
+    //自動ログイン処理
+    [[MELSUserManager sharedManager] autoLoginWithCompletion:^(NSError *error) {
+        //ログイン出来なかった場合にログイン画面への遷移
+        if (error) {
+            UIViewController *viewController = [[UIStoryboard storyboardWithName:MELSStoryboardMain bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:MELSStoryboardIDLogin];
+            [self.window.rootViewController presentViewController:viewController animated:YES completion:nil];
+        }
+    }];
 
     return YES;
 }
@@ -77,40 +82,29 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// ユーザ通知設定登録完了時ハンドラ (iOS8用)
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+#endif
+
 // デバイストークン発行成功
-- (void)application:(UIApplication*)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)devToken
-{    
-    const char *devTokenData = [devToken bytes];
-    NSMutableString *devTokenString = [NSMutableString string];
-    for (int i = 0; i < [devToken length]; i++) {
-        [devTokenString appendFormat:@"%02.2hhX", devTokenData[i]];
-    }
-    
-    ALog(@"deviceToken: %@", devTokenString);
-    
-    // デバイストークンをサーバに送信し、登録する
-    if (devTokenString.length > 0) {
-        NSDictionary *dict = @{@"key": @"all"};
-        [AppiariesPush sendDeviceToken:devToken dicAttr:dict delegate:self selector:@selector(resultSendDeviceToken:)];
-    }
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // デバイストークン登録APIの実行
+    APISPushAPIClient *api = [[APISSession sharedSession] createPushAPIClient];
+    [api registerDeviceToken:deviceToken attributes:nil];
     
     //アクセス状況を取得しておく
-    [[MELSUserManager sharedManager] lastAccessWithDevToken:devToken];
-}
-
-- (void)resultSendDeviceToken:(id)entity
-{
-    //デバイストークンを送信した後処理を書く
-//    AppiariesEntity *aEntity = (AppiariesEntity*)entity;
-//    
-//    ALog(@"statusCode:%ld",aEntity.statusCode);
-//    ALog(@"entity:%@",aEntity.entity);
-    
+    [[MELSUserManager sharedManager] lastAccessWithDevToken:deviceToken];
 }
 
 // デバイストークン発行失敗
-- (void)application:(UIApplication*)app didFailToRegisterForRemoteNotificationsWithError:(NSError*)err{
-    ALog(@"Errorinregistration.Error:%@",err);
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    ALog(@"Errorinregistration.Error:%@",error);
     
     //アクセス状況を取得しておく
     [[MELSUserManager sharedManager] lastAccessWithDevToken:nil];
@@ -129,11 +123,7 @@
     }
     
     //開封通知
-    [self sendOpendAPISWithUserInfo:userInfo];
-
-    //通知＆バッジを消す
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [self showPushNotificationAlertViewIfNeeded:userInfo];
 }
 
 #pragma mark private method
@@ -150,23 +140,31 @@
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
-
-- (void)sendOpendAPISWithUserInfo:(NSDictionary*)userInfo
+- (void)showPushNotificationAlertViewIfNeeded:(NSDictionary*)userInfo
 {
+    //通知＆バッジを消す
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+    if (!aps) {
+        return;
+    }
+    
+    //プッシュ通知メッセージを表示
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"AlertTitle", nil)
+                                                    message:aps[@"alert"]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
     //APIS PUSH 開封通知を送信（userInfoのpushIdキーにトークンが入っている）
     NSString* pushId = (NSString*) [userInfo objectForKey:@"pushId"];
     if (pushId != nil) {
-        [AppiariesPush sendOpened:pushId delegate:self selector:@selector(resultSendOpen:)];
+        APISPushAPIClient *api = [[APISSession sharedSession] createPushAPIClient];
+        [api notifyMessageOpenedWithPushId:[pushId integerValue]];
     }
-}
-
-- (void)resultSendOpen:(id)entity
-{
-    //開封通知した後処理を書く
-//    AppiariesEntity *aEntity = (AppiariesEntity*)entity;
-//    
-//    ALog(@"statusCode:%ld",aEntity.statusCode);
-//    ALog(@"entity:%@",aEntity.entity);
 }
 
 @end

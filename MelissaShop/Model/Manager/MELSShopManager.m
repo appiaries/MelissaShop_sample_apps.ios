@@ -7,7 +7,6 @@
 //
 
 #import "MELSShopManager.h"
-#import "MELSAPIClient.h"
 #import "MELSShop.h"
 #import <CoreLocation/CoreLocation.h>
 
@@ -63,72 +62,40 @@ static float const kSearchInCircle = 10.0f;
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSDictionary *parameters = nil;
-    
     //現在地から検索するときの検索条件
-    NSString *conditionString = [NSString stringWithFormat:@"_coord.wic.%f,%f,%f", location.coordinate.longitude, location.coordinate.latitude, kSearchInCircle];
-    NSArray *conditions = @[conditionString];
+    APISLocation *apisLocation = [[APISLocation alloc] init];
+    apisLocation.longitude = location.coordinate.longitude;
+    apisLocation.latitude = location.coordinate.latitude;
+    apisLocation.radius = kSearchInCircle;
+    APISQueryCondition *query = [[APISQueryCondition alloc] init];
+    [query setWithInCircle:apisLocation];
     
+    //JSON API Clientから検索を呼び出す
     __weak typeof(self) weakSelf = self;
-    //DataStoreAPIの呼び出し
-    [[MELSAPIClient sharedClient]searchDataStoreAPIWithCollection:kMELSCollectionShop conditions:conditions paramerters:parameters completion:^(NSDictionary *results, NSError *error) {
-        ALog(@"%@", results);
-        if (results && [results isKindOfClass:[NSDictionary class]]) {
-            NSArray *objs = [results objectForKey:@"_objs"];
+    APISJsonAPIClient *api = [[APISSession sharedSession] createJsonAPIClientWithCollectionId:kMELSCollectionShop];
+    [api searchJsonObjectsWithQueryCondition:query
+        success:^(APISResponseObject *response) {
+            //結果は「_objs」の配列で取得できる
+            NSArray *objs = [response.data objectForKey:@"_objs"];
             if ([objs isKindOfClass:[NSArray class]]) {
-                NSMutableArray *shops = [NSMutableArray new];
+                NSMutableArray *array = [NSMutableArray new];
+                //配列をループで回してMELSInformationの配列を作成する
                 for (NSDictionary *v in objs) {
                     MELSShop *shop = [[MELSShop alloc]initWithDict:v location:location];
-                    [shops addObject:shop];
+                    [array addObject:shop];
                 }
                 //現在地のからの距離が近い順でソートする
                 NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distance" ascending:YES];
                 [weakSelf.collections removeAllObjects];
-                weakSelf.collections = [[shops sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
+                weakSelf.collections = [[array sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
             }
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(nil);
+        } failure:^(NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(error);
         }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (block) block(error);
-    }];
+    ];
 }
-
--(void)getShopWithWord:(NSString *)word location:(CLLocation*)location completion:(void (^)(NSError *))block
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-
-    NSDictionary *parameters = @{@"order": @"_coord"};
-    
-    NSString *conditionString = [NSString stringWithFormat:@"shopName.eq.%@", [self urlEncoding:word]];
-    NSArray *conditions = @[conditionString];
-    
-    __weak typeof(self) weakSelf = self;
-    [[MELSAPIClient sharedClient]searchDataStoreAPIWithCollection:kMELSCollectionShop conditions:conditions paramerters:parameters completion:^(NSDictionary *results, NSError *error) {
-        ALog(@"%@", results);
-        if (results && [results isKindOfClass:[NSDictionary class]]) {
-            NSArray *objs = [results objectForKey:@"_objs"];
-            if ([objs isKindOfClass:[NSArray class]]) {
-                [weakSelf.collections removeAllObjects];
-                for (NSDictionary *v in objs) {
-                    MELSShop *shop = [[MELSShop alloc]initWithDict:v location:location];
-                    [weakSelf.collections addObject:shop];
-                }
-            }
-        }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (block) block(error);
-    }];
-}
-
--(NSString*)urlEncoding:(NSString*)plainString
-{
-    NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
-                                                                                                    NULL,
-                                                                                                    (CFStringRef)plainString,
-                                                                                                    NULL,
-                                                                                                    (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                                    kCFStringEncodingUTF8 ));
-    return escapedString;
-}
-
 
 @end

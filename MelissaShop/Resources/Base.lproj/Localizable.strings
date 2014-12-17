@@ -6,6 +6,7 @@
   Copyright (c) 2014年 Appiaries Corporation. All rights reserved.
 */
 "LoginSuccessMessage" = "ログインしました";
+"RegistSuccessMessage" = "会員登録しました";
 "ErrorMessageSearchWord" = "検索する文字を入力してください";
 "CouponLimitCount" = "利用回数";
 "CouponExpireDate" = "有効期限";
@@ -42,3 +43,4 @@
 "LastAccessDate" = "最新アクセス時間";
 "SaveSuccessMessage" = "保存しました";
 "CommonError" = "エラーが発生しました。再度やり直して下さい。";
+"AlertTitle" = "お知らせ";

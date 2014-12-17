@@ -7,7 +7,6 @@
 //
 
 #import "MELSCoupon.h"
-#import "MELSAPIClient.h"
 
 @implementation MELSCoupon
 
@@ -28,10 +27,15 @@
         _createdAt = [NSDate dateWithTimeIntervalSince1970:createdAtInterval];
         
         if (_couponImageObjectId.length > 0) {
-            _couponImageUrl = [MELSAPIClient getImageFileUrlWithObjectId:_couponImageObjectId];
+            _couponImageUrl = [MELSCoupon getImageFileUrlWithObjectId:_couponImageObjectId];
         }
     }
     return self;
+}
+
++(NSString*)getImageFileUrlWithObjectId:(NSString*)objectId
+{
+    return [NSString stringWithFormat:@"%@/%@/%@/%@/%@/_bin", MELSFileUrlBase, MELSAPISDatastoreId, MELSAPISAppId, MELSImageCollectionId, objectId];
 }
 
 @end

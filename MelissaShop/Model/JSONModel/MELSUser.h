@@ -9,17 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-/**
- *  ProfileAPIのスコープ
- */
-extern NSString *const kMELSUserProfileScope;
-
-@interface MELSUser : NSObject
-
-/**
- *  identifier
- */
-@property (strong, nonatomic) NSString *objectId;
+@interface MELSUser : APISAppUser
 
 /**
  *  性別 (male, female, other)
@@ -35,11 +25,6 @@ extern NSString *const kMELSUserProfileScope;
  *  ローカライズされた性別
  */
 @property (strong, nonatomic) NSString *localizedGender;
-
-/**
- *  ユーザ属性情報のidentifier
- */
-@property (strong, nonatomic) NSString *propertyObjectId;
 
 /**
  *  住所（都道府県）
@@ -69,14 +54,14 @@ extern NSString *const kMELSUserProfileScope;
 /**
  *  JSON→オブジェクト初期化用
  *
- *  @param dict JSONのProfileオブジェクト
+ *  @param dict JSONのAppUserオブジェクト
  */
 -(id)initWithDict:(NSDictionary*)dict;
 
 /**
  *  JSON→属性情報の更新用
  *
- *  @param dict JSONのuserPropertyオブジェクト
+ *  @param dict JSONのAppUserオブジェクト
  */
 -(void)updatePropertyWithDict:(NSDictionary*)dict;
 

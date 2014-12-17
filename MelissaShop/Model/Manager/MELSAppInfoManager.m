@@ -7,7 +7,6 @@
 //
 
 #import "MELSAppInfoManager.h"
-#import "MELSAPIClient.h"
 #import "MELSAppInfo.h"
 
 /**
@@ -57,25 +56,28 @@ static NSString *const kMELSCollectionAppInfo = @"appInfo";
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSDictionary *parameters = nil;
+    //条件を指定します。有効期限以降のデータを取得する
+    APISQueryCondition *query = [[APISQueryCondition alloc] init];
+    [query setEqualValue:[NSString stringWithFormat:@"%lun", (unsigned long)appInfoNumber] forKey:@"appInfoNumber"];
     
-    //有効期限以降のデータを取得する
-    NSString *conditionString = [NSString stringWithFormat:@"appInfoNumber.eq.%lun", (unsigned long)appInfoNumber];
-    NSArray *conditions = @[conditionString];
-    
+    //JSON API Clientから検索を呼び出す
     __weak typeof(self) weakSelf = self;
-    [[MELSAPIClient sharedClient]searchDataStoreAPIWithCollection:kMELSCollectionAppInfo conditions:conditions paramerters:parameters completion:^(NSDictionary *results, NSError *error) {
-        ALog(@"%@", results);
-        if (results && [results isKindOfClass:[NSDictionary class]]) {
-            NSArray *objs = [results objectForKey:@"_objs"];
+    APISJsonAPIClient *api = [[APISSession sharedSession] createJsonAPIClientWithCollectionId:kMELSCollectionAppInfo];
+    [api searchJsonObjectsWithQueryCondition:query
+        success:^(APISResponseObject *response) {
+            //結果は「_objs」の配列で取得できる
+            NSArray *objs = [response.data objectForKey:@"_objs"];
             if ([objs isKindOfClass:[NSArray class]] && [objs count] > 0) {
                 //1件目だけ取得
                 weakSelf.appInfo = [[MELSAppInfo alloc]initWithDict:(NSDictionary*)objs[0]];
             }
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(nil);
+        } failure:^(NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            if (block) block(error);
         }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (block) block(error);
-    }];
+    ];
 }
 
 @end

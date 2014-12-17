@@ -8,22 +8,42 @@
 
 #import <Foundation/Foundation.h>
 
-@class MELSUser;
+@class MELSUserAttribute;
 @class CLLocation;
 
 @interface MELSUserManager : NSObject
 
-@property (readonly, nonatomic) MELSUser *user;
+@property (readonly, nonatomic) MELSUserAttribute *userAttribute;
+@property (readonly, nonatomic) BOOL isLoggedIn;
 @property (strong, nonatomic) NSData *deviceToken;
 
 +(MELSUserManager*)sharedManager;
 
 /**
- *  ログインしているか判定
+ *  自動ログイン処理
  *
- *  @return YES or NO
+ *  @param block NSError
  */
--(BOOL)isLoggedIn;
+-(void)autoLoginWithCompletion:(void (^)(NSError *error))block;
+
+/**
+ *  ログイン処理
+ *
+ *  @param loginId
+ *  @param password
+ *  @param block    
+ */
+-(void)loginWithLoginId:(NSString*)loginId password:(NSString*)password completion:(void (^)(NSError *error))block;
+
+/**
+ *  ユーザ登録処理
+ *
+ *  @param loginId
+ *  @param password
+ *  @param userAttribute
+ *  @param block
+ */
+-(void)registWithLoginId:(NSString*)loginId password:(NSString*)password attribute:(MELSUserAttribute*)userAttribute completion:(void (^)(NSError *error))block;
 
 /**
  *  ログアウト処理
@@ -31,45 +51,17 @@
 -(void)logout;
 
 /**
- *  Profile情報を取得
- *
- *  @param block NSError
- */
--(void)getUserProfileWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  ユーザ属性情報を取得
- *
- *  @param block NSError
- */
--(void)getUserPropertyWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  ユーザ属性情報を作成
- *
- *  @param block NSError
- */
--(void)createUserPropertyWithCompletion:(void (^)(NSError *error))block;
-
-/**
- *  アクセス情報を取得
+ *  デバイストークン情報を取得
  *
  *  @param device token
  */
 -(void)lastAccessWithDevToken:(NSData*)devToken;
 
 /**
- *  アクセス情報を更新
- *
- *  @param block NSError
- */
--(void)updateLastAccessWithCompletion:(void (^)(NSError *error))block;
-
-/**
  *  ユーザ属性情報を更新
  *
  *  @param block NSError
  */
--(void)updateUserPropertyWithParameters:(NSDictionary*)parameters completion:(void (^)(NSError *error))block;
+-(void)updateUserAttribute:(MELSUserAttribute*)userAttribute completion:(void (^)(NSError *error))block;
 
 @end

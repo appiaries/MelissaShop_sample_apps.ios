@@ -130,18 +130,7 @@ static NSString *const kCellIdentifier = @"ShopListViewCell";
             }
             [weakSelf.refreshControl endRefreshing];
         }];
-    } else {
-        //検索ワードデータ呼び出し(not use)
-        [[MELSShopManager sharedManager]getShopWithWord:self.searchWord location:self.currentLocation completion:^(NSError *error) {
-            if (error) {
-                [weakSelf displayError:error completion:nil];
-            } else {
-                [weakSelf.tableView reloadData];
-            }
-            [weakSelf.refreshControl endRefreshing];
-        }];
     }
-    
 }
 
 

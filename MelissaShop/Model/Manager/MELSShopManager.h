@@ -37,11 +37,4 @@
  */
 -(void)getShopWithLocation:(CLLocation*)location completion:(void (^)(NSError *error))block;
 
-/**
- *  検索ワードから店舗データを取得する
- *
- *  @param block NSError
- */
--(void)getShopWithWord:(NSString *)word location:(CLLocation*)location completion:(void (^)(NSError *))block;
-
 @end

@@ -8,7 +8,7 @@
 
 #import "MELSSettingUserViewController.h"
 #import "MELSUserManager.h"
-#import "MELSUser.h"
+#import "MELSUserAttribute.h"
 #import "NSDateFormatter+GregorianCalendar.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -72,10 +72,10 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     
-    MELSUser *user = [MELSUserManager sharedManager].user;
+    MELSUserAttribute *userAttribute = [MELSUserManager sharedManager].userAttribute;
     if (indexPath.row == kMELSSettingUserCellSex) {
         cell.textLabel.text = NSLocalizedString(@"Gender", nil);
-        cell.detailTextLabel.text = user.localizedGender;
+        cell.detailTextLabel.text = userAttribute.localizedGender;
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -83,19 +83,19 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
         cell.textLabel.text = NSLocalizedString(@"DateOfBirth", nil);
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithGregorianCalendar];
         [dateFormatter setDateFormat:@"yyyy/MM/dd"];
-        cell.detailTextLabel.text = [dateFormatter stringFromDate:user.dateOfBirth];
+        cell.detailTextLabel.text = [dateFormatter stringFromDate:userAttribute.dateOfBirth];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     } else if (indexPath.row == kMELSSettingUserCellAddress){
         cell.textLabel.text = NSLocalizedString(@"Address", nil);
-        cell.detailTextLabel.text = user.address;
+        cell.detailTextLabel.text = userAttribute.address;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         
     } else if (indexPath.row == kMELSSettingUserCellFavoriteFood){
         cell.textLabel.text = NSLocalizedString(@"FavoriteFood", nil);
-        cell.detailTextLabel.text = user.favoriteFood;
+        cell.detailTextLabel.text = userAttribute.favoriteFood;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         
@@ -103,13 +103,13 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
         cell.textLabel.text = NSLocalizedString(@"LastAccessDate", nil);
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithGregorianCalendar];
         [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm"];
-        cell.detailTextLabel.text = [dateFormatter stringFromDate:user.lastAccessDate];
+        cell.detailTextLabel.text = [dateFormatter stringFromDate:userAttribute.lastAccessDate];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     } else if (indexPath.row == kMELSSettingUserCellLocation){
         cell.textLabel.text = NSLocalizedString(@"LastLocation", nil);
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f %f", user.lastLocation.coordinate.latitude, user.lastLocation.coordinate.longitude];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f %f", userAttribute.lastLocation.coordinate.latitude, userAttribute.lastLocation.coordinate.longitude];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -131,32 +131,9 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 }
 
 #pragma mark - private
--(void)saveUserPropertyWithParameter:(NSDictionary*)parameters
-{
-    __weak typeof(self) weakSelf = self;
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
-    //ユーザ属性情報の更新処理
-    [[MELSUserManager sharedManager]updateUserPropertyWithParameters:parameters completion:^(NSError *error) {
-        if (error) {
-            [SVProgressHUD dismiss];
-            [self displayError:error completion:nil];
-        } else{
-            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"SaveSuccessMessage", nil)];
-            [weakSelf showUserData];
-        }
-    }];
-}
-
 -(void)showUserData
 {
-    __weak typeof(self) weakSelf = self;
-    [[MELSUserManager sharedManager]getUserPropertyWithCompletion:^(NSError *error) {
-        if (error) {
-            [weakSelf displayError:error completion:nil];
-        } else {
-            [weakSelf.tableView reloadData];
-        }
-    }];
+    [self.tableView reloadData];
 }
 
 #pragma mark - FavoriteFood
@@ -176,8 +153,21 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 {
     if (buttonIndex == 1) {
         //好きな食べ物の保存処理
-        NSDictionary *parameters = @{@"favoriteFood": [[alertView textFieldAtIndex:0]text] ? :@""};
-        [self saveUserPropertyWithParameter:parameters];
+        MELSUserAttribute *attribute = [[MELSUserAttribute alloc] init];
+        attribute.favoriteFood = [[alertView textFieldAtIndex:0]text] ? :@"";
+        __weak typeof(self) weakSelf = self;
+        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+        
+        //ユーザ属性情報の更新
+        [[MELSUserManager sharedManager]updateUserAttribute:attribute completion:^(NSError *error) {
+            if (error) {
+                [SVProgressHUD dismiss];
+                [self displayError:error completion:nil];
+            } else{
+                [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"SaveSuccessMessage", nil)];
+                [weakSelf showUserData];
+            }
+        }];
     }
 }
 
@@ -261,8 +251,21 @@ typedef NS_ENUM(NSUInteger, kMELSSettingUserCell) {
 {
     //住所保存処理
     NSInteger row = [self.pickerView selectedRowInComponent:0];
-    NSDictionary *parameters = @{@"address": self.addresses[row] ? :@""};
-    [self saveUserPropertyWithParameter:parameters];
+    MELSUserAttribute *attribute = [[MELSUserAttribute alloc] init];
+    attribute.address = self.addresses[row] ? :@"";
+    __weak typeof(self) weakSelf = self;
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
+    //ユーザ属性情報の更新
+    [[MELSUserManager sharedManager]updateUserAttribute:attribute completion:^(NSError *error) {
+        if (error) {
+            [SVProgressHUD dismiss];
+            [self displayError:error completion:nil];
+        } else{
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"SaveSuccessMessage", nil)];
+            [weakSelf showUserData];
+        }
+    }];
 
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
         [self dismissViewControllerAnimated:YES completion:nil];
