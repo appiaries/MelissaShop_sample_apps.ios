@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97A65014F6194F18AC924E6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF189CB02FFD4CB3B3960B8D /* libPods.a */; };
-		982178A11A3FD4D00047A9D0 /* AppiariesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */; };
+		31CD91147A88FF7FF171F984 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD9ABCF0428427785F82D8 /* Image.m */; };
+		31CD920F6031CEDD79C0883E /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD9B1453C8D204C57D39DB /* Information.m */; };
+		31CD92120E6DBD2B16A79750 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD9E724C37B2107263BE25 /* Shop.m */; };
+		31CD958752AB89ACB01C4E8C /* NSDateFormatter+GregorianCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD959D867CA801ADA944CD /* NSDateFormatter+GregorianCalendar.m */; };
+		31CD9A5284C30F4A7B8BC265 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD963F74AEEC1A180170C4 /* User.m */; };
+		31CD9A89AED7BAE228D7940B /* NSURL+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD9193C3BBF1A54D7A429D /* NSURL+dictionaryFromQueryString.m */; };
+		31CD9C062203D454EC7EB5C9 /* Coupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD9D53802CFE777B16455E /* Coupon.m */; };
+		31CD9CDB752AD41B7D9102CC /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD95C42F9C205ED068E7E4 /* Device.m */; };
+		31CD9E0D48B888C84C21369B /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD996A1F029DA34107F54A /* AppInfo.m */; };
+		31CD9F2ED314FC2A77F2D6AB /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CD97B6E8BD89B50DDC1D91 /* DateHelper.m */; };
+		8DBD24131B186125007A8DE5 /* AppiariesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBD24121B186125007A8DE5 /* AppiariesSDK.framework */; };
+		8DBD24171B186209007A8DE5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBD24161B186209007A8DE5 /* MapKit.framework */; };
 		9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA51A280E3C00FE334C /* QuartzCore.framework */; };
 		9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9821EFA71A280E4900FE334C /* MobileCoreServices.framework */; };
 		98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B7C191B7970003E6700 /* Foundation.framework */; };
@@ -16,62 +26,57 @@
 		98276B81191B7970003E6700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B80191B7970003E6700 /* UIKit.framework */; };
 		98276B87191B7970003E6700 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98276B85191B7970003E6700 /* InfoPlist.strings */; };
 		98276B89191B7970003E6700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276B88191B7970003E6700 /* main.m */; };
-		98276B8D191B7970003E6700 /* MELSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276B8C191B7970003E6700 /* MELSAppDelegate.m */; };
+		98276B8D191B7970003E6700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276B8C191B7970003E6700 /* AppDelegate.m */; };
 		98276B90191B7970003E6700 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98276B8E191B7970003E6700 /* Main.storyboard */; };
 		98276B98191B7970003E6700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98276B97191B7970003E6700 /* Images.xcassets */; };
-		98276B9F191B7970003E6700 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B9E191B7970003E6700 /* XCTest.framework */; };
-		98276BA0191B7970003E6700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B7C191B7970003E6700 /* Foundation.framework */; };
-		98276BA1191B7970003E6700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98276B80191B7970003E6700 /* UIKit.framework */; };
-		98276BA9191B7970003E6700 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98276BA7191B7970003E6700 /* InfoPlist.strings */; };
-		98276BAB191B7970003E6700 /* MelissaShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98276BAA191B7970003E6700 /* MelissaShopTests.m */; };
-		9847355C1A31E2BA003E39C6 /* MELSUserAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */; };
-		9853BF7619370081007762B0 /* MELSAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7519370081007762B0 /* MELSAppInfo.m */; };
-		9853BF7919370181007762B0 /* MELSAppInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9853BF7819370181007762B0 /* MELSAppInfoManager.m */; };
-		985B67611A30A37500C9C2A9 /* MELSLoginFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */; };
-		985B67641A30A39200C9C2A9 /* MELSRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */; };
+		985B67611A30A37500C9C2A9 /* LogInFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67601A30A37500C9C2A9 /* LogInFormViewController.m */; };
+		985B67641A30A39200C9C2A9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B67631A30A39200C9C2A9 /* SignUpViewController.m */; };
 		987249151938A7F400F364E9 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 987249141938A7F400F364E9 /* address.plist */; };
-		987D48D21929E9C30049F4EE /* MELSCouponDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987D48D11929E9C30049F4EE /* MELSCouponDetailViewCell.m */; };
-		98824856192499880027B931 /* MELSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98824855192499880027B931 /* MELSInformation.m */; };
-		988248591924A8F60027B931 /* MELSInformationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 988248581924A8F60027B931 /* MELSInformationManager.m */; };
-		9882485D1924BB9D0027B931 /* MELSHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9882485C1924BB9D0027B931 /* MELSHomeViewCell.m */; };
-		98AF8CBF192C925F0077DBC3 /* MELSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CBE192C925F0077DBC3 /* MELSSettingViewController.m */; };
-		98AF8CC2192CC8140077DBC3 /* MELSSettingUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC1192CC8140077DBC3 /* MELSSettingUserViewController.m */; };
-		98AF8CC5192CC8420077DBC3 /* MELSSettingAppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC4192CC8420077DBC3 /* MELSSettingAppInfoViewController.m */; };
-		98AF8CC8192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */; };
-		98E0BECF192A0BCB00F35B10 /* MELSCouponUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */; };
-		98E36EC4192200CE00807684 /* MELSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36EC3192200CE00807684 /* MELSUser.m */; };
-		98E36ED819221CF400807684 /* NSURL+dictionaryFromQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E36ED719221CF400807684 /* NSURL+dictionaryFromQueryString.m */; };
-		98E604C41926FE4000E3495C /* MELSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C31926FE4000E3495C /* MELSBaseViewController.m */; };
-		98E604C81927217A00E3495C /* MELSShopListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C71927217A00E3495C /* MELSShopListViewCell.m */; };
-		98E604CB192721D800E3495C /* MELSShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604CA192721D800E3495C /* MELSShop.m */; };
-		98E604CE1927233B00E3495C /* MELSShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604CD1927233B00E3495C /* MELSShopManager.m */; };
-		98F4C0C91929C62100AE2644 /* MELSCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C0C81929C62100AE2644 /* MELSCoupon.m */; };
-		98F4C0CC1929C88900AE2644 /* MELSCouponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C0CB1929C88900AE2644 /* MELSCouponManager.m */; };
-		98F4C0CF1929CA7700AE2644 /* MELSCouponListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C0CE1929CA7700AE2644 /* MELSCouponListViewCell.m */; };
-		98FFA9A41920D21F004C6536 /* MELSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9A31920D21F004C6536 /* MELSLoginViewController.m */; };
+		987D48D21929E9C30049F4EE /* CouponDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987D48D11929E9C30049F4EE /* CouponDetailViewCell.m */; };
+		9882485D1924BB9D0027B931 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9882485C1924BB9D0027B931 /* HomeViewCell.m */; };
+		98AF8CBF192C925F0077DBC3 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CBE192C925F0077DBC3 /* SettingViewController.m */; };
+		98AF8CC2192CC8140077DBC3 /* SettingUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC1192CC8140077DBC3 /* SettingUserViewController.m */; };
+		98AF8CC5192CC8420077DBC3 /* SettingAppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF8CC4192CC8420077DBC3 /* SettingAppInfoViewController.m */; };
+		98E0BECF192A0BCB00F35B10 /* CouponUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E0BECE192A0BCB00F35B10 /* CouponUseViewController.m */; };
+		98E604C41926FE4000E3495C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C31926FE4000E3495C /* BaseViewController.m */; };
+		98E604C81927217A00E3495C /* ShopListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E604C71927217A00E3495C /* ShopListViewCell.m */; };
+		98F4C0CF1929CA7700AE2644 /* CouponListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F4C0CE1929CA7700AE2644 /* CouponListViewCell.m */; };
+		98FFA9A41920D21F004C6536 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9A31920D21F004C6536 /* LogInViewController.m */; };
 		98FFA9A71920D2C6004C6536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98FFA9A91920D2C6004C6536 /* Localizable.strings */; };
-		98FFA9AC1920D403004C6536 /* MELSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */; };
-		98FFA9AF1920D474004C6536 /* MELSShopMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AE1920D474004C6536 /* MELSShopMapViewController.m */; };
-		98FFA9B81920D8CE004C6536 /* MELSInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9B71920D8CE004C6536 /* MELSInformationViewController.m */; };
-		98FFA9BE1920DAC7004C6536 /* MELSShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9BD1920DAC7004C6536 /* MELSShopListViewController.m */; };
-		98FFA9C11920DB8D004C6536 /* MELSCouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C01920DB8D004C6536 /* MELSCouponListViewController.m */; };
-		98FFA9C41920DBDE004C6536 /* MELSCouponDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C31920DBDE004C6536 /* MELSCouponDetailViewController.m */; };
-		98FFA9C81920E636004C6536 /* MELSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C71920E636004C6536 /* MELSUserManager.m */; };
+		98FFA9AC1920D403004C6536 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AB1920D403004C6536 /* HomeViewController.m */; };
+		98FFA9AF1920D474004C6536 /* ShopMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9AE1920D474004C6536 /* ShopMapViewController.m */; };
+		98FFA9B81920D8CE004C6536 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9B71920D8CE004C6536 /* InformationViewController.m */; };
+		98FFA9BE1920DAC7004C6536 /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9BD1920DAC7004C6536 /* ShopListViewController.m */; };
+		98FFA9C11920DB8D004C6536 /* CouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C01920DB8D004C6536 /* CouponListViewController.m */; };
+		98FFA9C41920DBDE004C6536 /* CouponDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FFA9C31920DBDE004C6536 /* CouponDetailViewController.m */; };
+		C5ADAC4B25A3FA978C72B03F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA568650C07F68A63C76C /* DataManager.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		98276BA2191B7970003E6700 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98276B71191B7970003E6700 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98276B78191B7970003E6700;
-			remoteInfo = MelissaShop;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		6EC227D5AB504554BAB05128 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppiariesSDK.framework; sourceTree = "<group>"; };
+		31CD90AABDEDBB166B141796 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		31CD916A453A3FA176A522A4 /* NSURL+dictionaryFromQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+dictionaryFromQueryString.h"; sourceTree = "<group>"; };
+		31CD9193C3BBF1A54D7A429D /* NSURL+dictionaryFromQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+dictionaryFromQueryString.m"; sourceTree = "<group>"; };
+		31CD91F6F44D7D5A2DAFBE35 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
+		31CD923BF3277130B7BFCC96 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		31CD925D2131CDADFC89C0D5 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		31CD94537857BD36392D6C86 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
+		31CD959D867CA801ADA944CD /* NSDateFormatter+GregorianCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+GregorianCalendar.m"; sourceTree = "<group>"; };
+		31CD95C42F9C205ED068E7E4 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		31CD963F74AEEC1A180170C4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		31CD97B6E8BD89B50DDC1D91 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
+		31CD996A1F029DA34107F54A /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
+		31CD99AB0C395FA6CAE03996 /* NSDateFormatter+GregorianCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+GregorianCalendar.h"; sourceTree = "<group>"; };
+		31CD9A27B3110E3D7D2EE5AA /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		31CD9ABCF0428427785F82D8 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		31CD9B1453C8D204C57D39DB /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
+		31CD9BCE1CCC7D7718F4CD02 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		31CD9D47C05636DFC0C67F28 /* Coupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coupon.h; sourceTree = "<group>"; };
+		31CD9D53802CFE777B16455E /* Coupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coupon.m; sourceTree = "<group>"; };
+		31CD9E61D0E617DCCC3D08FE /* DateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
+		31CD9E724C37B2107263BE25 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		8DBD24121B186125007A8DE5 /* AppiariesSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppiariesSDK.framework; sourceTree = "<group>"; };
+		8DBD24161B186209007A8DE5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		959E7AF63363B3C06D9B83FF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9821EFA51A280E3C00FE334C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9821EFA71A280E4900FE334C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		98276B79191B7970003E6700 /* MelissaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelissaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,82 +86,53 @@
 		98276B84191B7970003E6700 /* MelissaShop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MelissaShop-Info.plist"; sourceTree = "<group>"; };
 		98276B88191B7970003E6700 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98276B8A191B7970003E6700 /* MelissaShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MelissaShop-Prefix.pch"; sourceTree = "<group>"; };
-		98276B8B191B7970003E6700 /* MELSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MELSAppDelegate.h; sourceTree = "<group>"; };
-		98276B8C191B7970003E6700 /* MELSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MELSAppDelegate.m; sourceTree = "<group>"; };
+		98276B8B191B7970003E6700 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		98276B8C191B7970003E6700 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		98276B8F191B7970003E6700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98276B97191B7970003E6700 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		98276B9D191B7970003E6700 /* MelissaShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelissaShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		98276B9E191B7970003E6700 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		98276BA6191B7970003E6700 /* MelissaShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MelissaShopTests-Info.plist"; sourceTree = "<group>"; };
-		98276BA8191B7970003E6700 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		98276BAA191B7970003E6700 /* MelissaShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MelissaShopTests.m; sourceTree = "<group>"; };
-		9847355A1A31E2BA003E39C6 /* MELSUserAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUserAttribute.h; sourceTree = "<group>"; };
-		9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSUserAttribute.m; sourceTree = "<group>"; };
-		9853BF7419370081007762B0 /* MELSAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAppInfo.h; sourceTree = "<group>"; };
-		9853BF7519370081007762B0 /* MELSAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAppInfo.m; sourceTree = "<group>"; };
-		9853BF7719370181007762B0 /* MELSAppInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSAppInfoManager.h; sourceTree = "<group>"; };
-		9853BF7819370181007762B0 /* MELSAppInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSAppInfoManager.m; sourceTree = "<group>"; };
-		985B675F1A30A37500C9C2A9 /* MELSLoginFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSLoginFormViewController.h; sourceTree = "<group>"; };
-		985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSLoginFormViewController.m; sourceTree = "<group>"; };
-		985B67621A30A39200C9C2A9 /* MELSRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSRegistViewController.h; sourceTree = "<group>"; };
-		985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSRegistViewController.m; sourceTree = "<group>"; };
+		985B675F1A30A37500C9C2A9 /* LogInFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInFormViewController.h; sourceTree = "<group>"; };
+		985B67601A30A37500C9C2A9 /* LogInFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInFormViewController.m; sourceTree = "<group>"; };
+		985B67621A30A39200C9C2A9 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		985B67631A30A39200C9C2A9 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		987249141938A7F400F364E9 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
-		987D48D01929E9C30049F4EE /* MELSCouponDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponDetailViewCell.h; sourceTree = "<group>"; };
-		987D48D11929E9C30049F4EE /* MELSCouponDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponDetailViewCell.m; sourceTree = "<group>"; };
-		98824854192499880027B931 /* MELSInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSInformation.h; sourceTree = "<group>"; };
-		98824855192499880027B931 /* MELSInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSInformation.m; sourceTree = "<group>"; };
-		988248571924A8F60027B931 /* MELSInformationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSInformationManager.h; sourceTree = "<group>"; };
-		988248581924A8F60027B931 /* MELSInformationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSInformationManager.m; sourceTree = "<group>"; };
-		9882485B1924BB9D0027B931 /* MELSHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSHomeViewCell.h; sourceTree = "<group>"; };
-		9882485C1924BB9D0027B931 /* MELSHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSHomeViewCell.m; sourceTree = "<group>"; };
-		98AF8CBD192C925F0077DBC3 /* MELSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSSettingViewController.h; sourceTree = "<group>"; };
-		98AF8CBE192C925F0077DBC3 /* MELSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSSettingViewController.m; sourceTree = "<group>"; };
-		98AF8CC0192CC8140077DBC3 /* MELSSettingUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSSettingUserViewController.h; sourceTree = "<group>"; };
-		98AF8CC1192CC8140077DBC3 /* MELSSettingUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSSettingUserViewController.m; sourceTree = "<group>"; };
-		98AF8CC3192CC8420077DBC3 /* MELSSettingAppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSSettingAppInfoViewController.h; sourceTree = "<group>"; };
-		98AF8CC4192CC8420077DBC3 /* MELSSettingAppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSSettingAppInfoViewController.m; sourceTree = "<group>"; };
-		98AF8CC6192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+GregorianCalendar.h"; sourceTree = "<group>"; };
-		98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+GregorianCalendar.m"; sourceTree = "<group>"; };
-		98E0BECD192A0BCB00F35B10 /* MELSCouponUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponUseViewController.h; sourceTree = "<group>"; };
-		98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponUseViewController.m; sourceTree = "<group>"; };
-		98E36EC2192200CE00807684 /* MELSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUser.h; sourceTree = "<group>"; };
-		98E36EC3192200CE00807684 /* MELSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSUser.m; sourceTree = "<group>"; };
-		98E36ED619221CF400807684 /* NSURL+dictionaryFromQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+dictionaryFromQueryString.h"; sourceTree = "<group>"; };
-		98E36ED719221CF400807684 /* NSURL+dictionaryFromQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+dictionaryFromQueryString.m"; sourceTree = "<group>"; };
-		98E604C21926FE4000E3495C /* MELSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSBaseViewController.h; sourceTree = "<group>"; };
-		98E604C31926FE4000E3495C /* MELSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSBaseViewController.m; sourceTree = "<group>"; };
+		987D48D01929E9C30049F4EE /* CouponDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponDetailViewCell.h; sourceTree = "<group>"; };
+		987D48D11929E9C30049F4EE /* CouponDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponDetailViewCell.m; sourceTree = "<group>"; };
+		9882485B1924BB9D0027B931 /* HomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
+		9882485C1924BB9D0027B931 /* HomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
+		98AF8CBD192C925F0077DBC3 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		98AF8CBE192C925F0077DBC3 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		98AF8CC0192CC8140077DBC3 /* SettingUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingUserViewController.h; sourceTree = "<group>"; };
+		98AF8CC1192CC8140077DBC3 /* SettingUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingUserViewController.m; sourceTree = "<group>"; };
+		98AF8CC3192CC8420077DBC3 /* SettingAppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingAppInfoViewController.h; sourceTree = "<group>"; };
+		98AF8CC4192CC8420077DBC3 /* SettingAppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingAppInfoViewController.m; sourceTree = "<group>"; };
+		98E0BECD192A0BCB00F35B10 /* CouponUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponUseViewController.h; sourceTree = "<group>"; };
+		98E0BECE192A0BCB00F35B10 /* CouponUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponUseViewController.m; sourceTree = "<group>"; };
+		98E604C21926FE4000E3495C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		98E604C31926FE4000E3495C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		98E604C5192716FB00E3495C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		98E604C61927217A00E3495C /* MELSShopListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopListViewCell.h; sourceTree = "<group>"; };
-		98E604C71927217A00E3495C /* MELSShopListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShopListViewCell.m; sourceTree = "<group>"; };
-		98E604C9192721D800E3495C /* MELSShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShop.h; sourceTree = "<group>"; };
-		98E604CA192721D800E3495C /* MELSShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShop.m; sourceTree = "<group>"; };
-		98E604CC1927233B00E3495C /* MELSShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopManager.h; sourceTree = "<group>"; };
-		98E604CD1927233B00E3495C /* MELSShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShopManager.m; sourceTree = "<group>"; };
-		98F4C0C71929C62100AE2644 /* MELSCoupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCoupon.h; sourceTree = "<group>"; };
-		98F4C0C81929C62100AE2644 /* MELSCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCoupon.m; sourceTree = "<group>"; };
-		98F4C0CA1929C88900AE2644 /* MELSCouponManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponManager.h; sourceTree = "<group>"; };
-		98F4C0CB1929C88900AE2644 /* MELSCouponManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponManager.m; sourceTree = "<group>"; };
-		98F4C0CD1929CA7700AE2644 /* MELSCouponListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponListViewCell.h; sourceTree = "<group>"; };
-		98F4C0CE1929CA7700AE2644 /* MELSCouponListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponListViewCell.m; sourceTree = "<group>"; };
-		98FFA9A21920D21F004C6536 /* MELSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSLoginViewController.h; sourceTree = "<group>"; };
-		98FFA9A31920D21F004C6536 /* MELSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSLoginViewController.m; sourceTree = "<group>"; };
+		98E604C61927217A00E3495C /* ShopListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewCell.h; sourceTree = "<group>"; };
+		98E604C71927217A00E3495C /* ShopListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewCell.m; sourceTree = "<group>"; };
+		98F4C0CD1929CA7700AE2644 /* CouponListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListViewCell.h; sourceTree = "<group>"; };
+		98F4C0CE1929CA7700AE2644 /* CouponListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListViewCell.m; sourceTree = "<group>"; };
+		98FFA9A21920D21F004C6536 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		98FFA9A31920D21F004C6536 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		98FFA9A81920D2C6004C6536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		98FFA9AA1920D403004C6536 /* MELSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSHomeViewController.h; sourceTree = "<group>"; };
-		98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSHomeViewController.m; sourceTree = "<group>"; };
-		98FFA9AD1920D474004C6536 /* MELSShopMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopMapViewController.h; sourceTree = "<group>"; };
-		98FFA9AE1920D474004C6536 /* MELSShopMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShopMapViewController.m; sourceTree = "<group>"; };
-		98FFA9B61920D8CE004C6536 /* MELSInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSInformationViewController.h; sourceTree = "<group>"; };
-		98FFA9B71920D8CE004C6536 /* MELSInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSInformationViewController.m; sourceTree = "<group>"; };
-		98FFA9BC1920DAC7004C6536 /* MELSShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSShopListViewController.h; sourceTree = "<group>"; };
-		98FFA9BD1920DAC7004C6536 /* MELSShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSShopListViewController.m; sourceTree = "<group>"; };
-		98FFA9BF1920DB8D004C6536 /* MELSCouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponListViewController.h; sourceTree = "<group>"; };
-		98FFA9C01920DB8D004C6536 /* MELSCouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponListViewController.m; sourceTree = "<group>"; };
-		98FFA9C21920DBDE004C6536 /* MELSCouponDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSCouponDetailViewController.h; sourceTree = "<group>"; };
-		98FFA9C31920DBDE004C6536 /* MELSCouponDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSCouponDetailViewController.m; sourceTree = "<group>"; };
-		98FFA9C61920E636004C6536 /* MELSUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELSUserManager.h; sourceTree = "<group>"; };
-		98FFA9C71920E636004C6536 /* MELSUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELSUserManager.m; sourceTree = "<group>"; };
-		98FFA9C91920E96C004C6536 /* MELSConfigurations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MELSConfigurations.h; sourceTree = "<group>"; };
-		BF189CB02FFD4CB3B3960B8D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98FFA9AA1920D403004C6536 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		98FFA9AB1920D403004C6536 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		98FFA9AD1920D474004C6536 /* ShopMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopMapViewController.h; sourceTree = "<group>"; };
+		98FFA9AE1920D474004C6536 /* ShopMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopMapViewController.m; sourceTree = "<group>"; };
+		98FFA9B61920D8CE004C6536 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		98FFA9B71920D8CE004C6536 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		98FFA9BC1920DAC7004C6536 /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListViewController.h; sourceTree = "<group>"; };
+		98FFA9BD1920DAC7004C6536 /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListViewController.m; sourceTree = "<group>"; };
+		98FFA9BF1920DB8D004C6536 /* CouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListViewController.h; sourceTree = "<group>"; };
+		98FFA9C01920DB8D004C6536 /* CouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListViewController.m; sourceTree = "<group>"; };
+		98FFA9C21920DBDE004C6536 /* CouponDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponDetailViewController.h; sourceTree = "<group>"; };
+		98FFA9C31920DBDE004C6536 /* CouponDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponDetailViewController.m; sourceTree = "<group>"; };
+		98FFA9C91920E96C004C6536 /* Configurations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Configurations.h; sourceTree = "<group>"; };
+		A4B5B9256C8E1E614A5E6737 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C5ADA568650C07F68A63C76C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		C5ADAB7EB225FEF4D367392D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,37 +140,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DBD24131B186125007A8DE5 /* AppiariesSDK.framework in Frameworks */,
 				9821EFA81A280E4900FE334C /* MobileCoreServices.framework in Frameworks */,
+				8DBD24171B186209007A8DE5 /* MapKit.framework in Frameworks */,
 				9821EFA61A280E3C00FE334C /* QuartzCore.framework in Frameworks */,
 				98276B7F191B7970003E6700 /* CoreGraphics.framework in Frameworks */,
 				98276B81191B7970003E6700 /* UIKit.framework in Frameworks */,
-				982178A11A3FD4D00047A9D0 /* AppiariesSDK.framework in Frameworks */,
 				98276B7D191B7970003E6700 /* Foundation.framework in Frameworks */,
-				97A65014F6194F18AC924E6C /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98276B9A191B7970003E6700 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98276B9F191B7970003E6700 /* XCTest.framework in Frameworks */,
-				98276BA1191B7970003E6700 /* UIKit.framework in Frameworks */,
-				98276BA0191B7970003E6700 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31CD9188CAEC8A88D7507BA9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				31CD96E6336343EEEF9718B5 /* Extensions */,
+				31CD9E6278A626A49F6201E5 /* Helpers */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		31CD96E6336343EEEF9718B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31CD99AB0C395FA6CAE03996 /* NSDateFormatter+GregorianCalendar.h */,
+				31CD959D867CA801ADA944CD /* NSDateFormatter+GregorianCalendar.m */,
+				31CD916A453A3FA176A522A4 /* NSURL+dictionaryFromQueryString.h */,
+				31CD9193C3BBF1A54D7A429D /* NSURL+dictionaryFromQueryString.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31CD9E6278A626A49F6201E5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				31CD9E61D0E617DCCC3D08FE /* DateHelper.h */,
+				31CD97B6E8BD89B50DDC1D91 /* DateHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		878ECFDF24D5B4D8736AC696 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				959E7AF63363B3C06D9B83FF /* Pods.debug.xcconfig */,
+				A4B5B9256C8E1E614A5E6737 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		98276B70191B7970003E6700 = {
 			isa = PBXGroup;
 			children = (
 				98276B82191B7970003E6700 /* MelissaShop */,
-				98276BA4191B7970003E6700 /* MelissaShopTests */,
 				98276B7B191B7970003E6700 /* Frameworks */,
 				98276B7A191B7970003E6700 /* Products */,
-				6EC227D5AB504554BAB05128 /* Pods.xcconfig */,
+				878ECFDF24D5B4D8736AC696 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				98276B79191B7970003E6700 /* MelissaShop.app */,
-				98276B9D191B7970003E6700 /* MelissaShopTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,14 +212,13 @@
 		98276B7B191B7970003E6700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				982178A01A3FD4D00047A9D0 /* AppiariesSDK.framework */,
+				8DBD24161B186209007A8DE5 /* MapKit.framework */,
+				8DBD24121B186125007A8DE5 /* AppiariesSDK.framework */,
 				9821EFA71A280E4900FE334C /* MobileCoreServices.framework */,
 				9821EFA51A280E3C00FE334C /* QuartzCore.framework */,
 				98276B7C191B7970003E6700 /* Foundation.framework */,
 				98276B7E191B7970003E6700 /* CoreGraphics.framework */,
 				98276B80191B7970003E6700 /* UIKit.framework */,
-				98276B9E191B7970003E6700 /* XCTest.framework */,
-				BF189CB02FFD4CB3B3960B8D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,16 +226,17 @@
 		98276B82191B7970003E6700 /* MelissaShop */ = {
 			isa = PBXGroup;
 			children = (
-				98276B8B191B7970003E6700 /* MELSAppDelegate.h */,
-				98276B8C191B7970003E6700 /* MELSAppDelegate.m */,
-				98276BB5191B7C0F003E6700 /* Controller */,
-				98276BB6191B7C49003E6700 /* Model */,
-				98276BB7191B7C5B003E6700 /* View */,
+				98276BB5191B7C0F003E6700 /* Controllers */,
 				98276BB8191B7C6A003E6700 /* Library */,
+				98276BB6191B7C49003E6700 /* Models */,
 				98276BB9191B7CAD003E6700 /* Resources */,
-				98276B8E191B7970003E6700 /* Main.storyboard */,
-				98276B97191B7970003E6700 /* Images.xcassets */,
+				31CD9188CAEC8A88D7507BA9 /* Support */,
 				98276B83191B7970003E6700 /* Supporting Files */,
+				98276BB7191B7C5B003E6700 /* Views */,
+				98276B97191B7970003E6700 /* Images.xcassets */,
+				98276B8E191B7970003E6700 /* Main.storyboard */,
+				98276B8B191B7970003E6700 /* AppDelegate.h */,
+				98276B8C191B7970003E6700 /* AppDelegate.m */,
 			);
 			path = MelissaShop;
 			sourceTree = "<group>";
@@ -242,89 +244,84 @@
 		98276B83191B7970003E6700 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				98276B84191B7970003E6700 /* MelissaShop-Info.plist */,
 				98276B85191B7970003E6700 /* InfoPlist.strings */,
 				98276B88191B7970003E6700 /* main.m */,
+				98276B84191B7970003E6700 /* MelissaShop-Info.plist */,
 				98276B8A191B7970003E6700 /* MelissaShop-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98276BA4191B7970003E6700 /* MelissaShopTests */ = {
+		98276BB5191B7C0F003E6700 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				98276BAA191B7970003E6700 /* MelissaShopTests.m */,
-				98276BA5191B7970003E6700 /* Supporting Files */,
+				98E604C21926FE4000E3495C /* BaseViewController.h */,
+				98E604C31926FE4000E3495C /* BaseViewController.m */,
+				98FFA9C21920DBDE004C6536 /* CouponDetailViewController.h */,
+				98FFA9C31920DBDE004C6536 /* CouponDetailViewController.m */,
+				98FFA9BF1920DB8D004C6536 /* CouponListViewController.h */,
+				98FFA9C01920DB8D004C6536 /* CouponListViewController.m */,
+				98E0BECD192A0BCB00F35B10 /* CouponUseViewController.h */,
+				98E0BECE192A0BCB00F35B10 /* CouponUseViewController.m */,
+				98FFA9AA1920D403004C6536 /* HomeViewController.h */,
+				98FFA9AB1920D403004C6536 /* HomeViewController.m */,
+				98FFA9B61920D8CE004C6536 /* InformationViewController.h */,
+				98FFA9B71920D8CE004C6536 /* InformationViewController.m */,
+				985B675F1A30A37500C9C2A9 /* LogInFormViewController.h */,
+				985B67601A30A37500C9C2A9 /* LogInFormViewController.m */,
+				98FFA9A21920D21F004C6536 /* LogInViewController.h */,
+				98FFA9A31920D21F004C6536 /* LogInViewController.m */,
+				98AF8CC3192CC8420077DBC3 /* SettingAppInfoViewController.h */,
+				98AF8CC4192CC8420077DBC3 /* SettingAppInfoViewController.m */,
+				98AF8CC0192CC8140077DBC3 /* SettingUserViewController.h */,
+				98AF8CC1192CC8140077DBC3 /* SettingUserViewController.m */,
+				98AF8CBD192C925F0077DBC3 /* SettingViewController.h */,
+				98AF8CBE192C925F0077DBC3 /* SettingViewController.m */,
+				98FFA9BC1920DAC7004C6536 /* ShopListViewController.h */,
+				98FFA9BD1920DAC7004C6536 /* ShopListViewController.m */,
+				98FFA9AD1920D474004C6536 /* ShopMapViewController.h */,
+				98FFA9AE1920D474004C6536 /* ShopMapViewController.m */,
+				985B67621A30A39200C9C2A9 /* SignUpViewController.h */,
+				985B67631A30A39200C9C2A9 /* SignUpViewController.m */,
 			);
-			path = MelissaShopTests;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		98276BA5191B7970003E6700 /* Supporting Files */ = {
+		98276BB6191B7C49003E6700 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				98276BA6191B7970003E6700 /* MelissaShopTests-Info.plist */,
-				98276BA7191B7970003E6700 /* InfoPlist.strings */,
+				98FFA9C51920E5FB004C6536 /* Managers */,
+				31CD94537857BD36392D6C86 /* AppInfo.h */,
+				31CD996A1F029DA34107F54A /* AppInfo.m */,
+				31CD9D47C05636DFC0C67F28 /* Coupon.h */,
+				31CD9D53802CFE777B16455E /* Coupon.m */,
+				31CD9A27B3110E3D7D2EE5AA /* Device.h */,
+				31CD95C42F9C205ED068E7E4 /* Device.m */,
+				31CD925D2131CDADFC89C0D5 /* Image.h */,
+				31CD9ABCF0428427785F82D8 /* Image.m */,
+				31CD91F6F44D7D5A2DAFBE35 /* Information.h */,
+				31CD9B1453C8D204C57D39DB /* Information.m */,
+				31CD90AABDEDBB166B141796 /* Shop.h */,
+				31CD9E724C37B2107263BE25 /* Shop.m */,
+				31CD923BF3277130B7BFCC96 /* User.h */,
+				31CD963F74AEEC1A180170C4 /* User.m */,
 			);
-			name = "Supporting Files";
+			path = Models;
 			sourceTree = "<group>";
 		};
-		98276BB5191B7C0F003E6700 /* Controller */ = {
+		98276BB7191B7C5B003E6700 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				98E604C21926FE4000E3495C /* MELSBaseViewController.h */,
-				98E604C31926FE4000E3495C /* MELSBaseViewController.m */,
-				98FFA9A21920D21F004C6536 /* MELSLoginViewController.h */,
-				98FFA9A31920D21F004C6536 /* MELSLoginViewController.m */,
-				985B675F1A30A37500C9C2A9 /* MELSLoginFormViewController.h */,
-				985B67601A30A37500C9C2A9 /* MELSLoginFormViewController.m */,
-				985B67621A30A39200C9C2A9 /* MELSRegistViewController.h */,
-				985B67631A30A39200C9C2A9 /* MELSRegistViewController.m */,
-				98FFA9AA1920D403004C6536 /* MELSHomeViewController.h */,
-				98FFA9AB1920D403004C6536 /* MELSHomeViewController.m */,
-				98FFA9B61920D8CE004C6536 /* MELSInformationViewController.h */,
-				98FFA9B71920D8CE004C6536 /* MELSInformationViewController.m */,
-				98FFA9AD1920D474004C6536 /* MELSShopMapViewController.h */,
-				98FFA9AE1920D474004C6536 /* MELSShopMapViewController.m */,
-				98FFA9BC1920DAC7004C6536 /* MELSShopListViewController.h */,
-				98FFA9BD1920DAC7004C6536 /* MELSShopListViewController.m */,
-				98FFA9BF1920DB8D004C6536 /* MELSCouponListViewController.h */,
-				98FFA9C01920DB8D004C6536 /* MELSCouponListViewController.m */,
-				98FFA9C21920DBDE004C6536 /* MELSCouponDetailViewController.h */,
-				98FFA9C31920DBDE004C6536 /* MELSCouponDetailViewController.m */,
-				98E0BECD192A0BCB00F35B10 /* MELSCouponUseViewController.h */,
-				98E0BECE192A0BCB00F35B10 /* MELSCouponUseViewController.m */,
-				98AF8CBD192C925F0077DBC3 /* MELSSettingViewController.h */,
-				98AF8CBE192C925F0077DBC3 /* MELSSettingViewController.m */,
-				98AF8CC0192CC8140077DBC3 /* MELSSettingUserViewController.h */,
-				98AF8CC1192CC8140077DBC3 /* MELSSettingUserViewController.m */,
-				98AF8CC3192CC8420077DBC3 /* MELSSettingAppInfoViewController.h */,
-				98AF8CC4192CC8420077DBC3 /* MELSSettingAppInfoViewController.m */,
+				9882485A1924BB5E0027B931 /* Cells */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		98276BB6191B7C49003E6700 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				98FFA9C51920E5FB004C6536 /* Manager */,
-				98FFA9CA1920EE39004C6536 /* JSONModel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		98276BB7191B7C5B003E6700 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9882485A1924BB5E0027B931 /* Cell */,
-			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98276BB8191B7C6A003E6700 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				98E36ED519221CD000807684 /* Extensions */,
-				98FFA9C91920E96C004C6536 /* MELSConfigurations.h */,
+				98FFA9C91920E96C004C6536 /* Configurations.h */,
+				31CD9BCE1CCC7D7718F4CD02 /* Constants.h */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -332,72 +329,34 @@
 		98276BB9191B7CAD003E6700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				98FFA9A91920D2C6004C6536 /* Localizable.strings */,
 				987249141938A7F400F364E9 /* address.plist */,
+				98FFA9A91920D2C6004C6536 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9882485A1924BB5E0027B931 /* Cell */ = {
+		9882485A1924BB5E0027B931 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9882485B1924BB9D0027B931 /* MELSHomeViewCell.h */,
-				9882485C1924BB9D0027B931 /* MELSHomeViewCell.m */,
-				98E604C61927217A00E3495C /* MELSShopListViewCell.h */,
-				98E604C71927217A00E3495C /* MELSShopListViewCell.m */,
-				98F4C0CD1929CA7700AE2644 /* MELSCouponListViewCell.h */,
-				98F4C0CE1929CA7700AE2644 /* MELSCouponListViewCell.m */,
-				987D48D01929E9C30049F4EE /* MELSCouponDetailViewCell.h */,
-				987D48D11929E9C30049F4EE /* MELSCouponDetailViewCell.m */,
+				987D48D01929E9C30049F4EE /* CouponDetailViewCell.h */,
+				987D48D11929E9C30049F4EE /* CouponDetailViewCell.m */,
+				98F4C0CD1929CA7700AE2644 /* CouponListViewCell.h */,
+				98F4C0CE1929CA7700AE2644 /* CouponListViewCell.m */,
+				9882485B1924BB9D0027B931 /* HomeViewCell.h */,
+				9882485C1924BB9D0027B931 /* HomeViewCell.m */,
+				98E604C61927217A00E3495C /* ShopListViewCell.h */,
+				98E604C71927217A00E3495C /* ShopListViewCell.m */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		98E36ED519221CD000807684 /* Extensions */ = {
+		98FFA9C51920E5FB004C6536 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				98E36ED619221CF400807684 /* NSURL+dictionaryFromQueryString.h */,
-				98E36ED719221CF400807684 /* NSURL+dictionaryFromQueryString.m */,
-				98AF8CC6192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.h */,
-				98AF8CC7192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m */,
+				C5ADAB7EB225FEF4D367392D /* DataManager.h */,
+				C5ADA568650C07F68A63C76C /* DataManager.m */,
 			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		98FFA9C51920E5FB004C6536 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				98FFA9C61920E636004C6536 /* MELSUserManager.h */,
-				98FFA9C71920E636004C6536 /* MELSUserManager.m */,
-				988248571924A8F60027B931 /* MELSInformationManager.h */,
-				988248581924A8F60027B931 /* MELSInformationManager.m */,
-				98E604CC1927233B00E3495C /* MELSShopManager.h */,
-				98E604CD1927233B00E3495C /* MELSShopManager.m */,
-				98F4C0CA1929C88900AE2644 /* MELSCouponManager.h */,
-				98F4C0CB1929C88900AE2644 /* MELSCouponManager.m */,
-				9853BF7719370181007762B0 /* MELSAppInfoManager.h */,
-				9853BF7819370181007762B0 /* MELSAppInfoManager.m */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		98FFA9CA1920EE39004C6536 /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				98E36EC2192200CE00807684 /* MELSUser.h */,
-				98E36EC3192200CE00807684 /* MELSUser.m */,
-				9847355A1A31E2BA003E39C6 /* MELSUserAttribute.h */,
-				9847355B1A31E2BA003E39C6 /* MELSUserAttribute.m */,
-				98824854192499880027B931 /* MELSInformation.h */,
-				98824855192499880027B931 /* MELSInformation.m */,
-				98E604C9192721D800E3495C /* MELSShop.h */,
-				98E604CA192721D800E3495C /* MELSShop.m */,
-				98F4C0C71929C62100AE2644 /* MELSCoupon.h */,
-				98F4C0C81929C62100AE2644 /* MELSCoupon.m */,
-				9853BF7419370081007762B0 /* MELSAppInfo.h */,
-				9853BF7519370081007762B0 /* MELSAppInfo.m */,
-			);
-			path = JSONModel;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,11 +366,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98276BAE191B7970003E6700 /* Build configuration list for PBXNativeTarget "MelissaShop" */;
 			buildPhases = (
-				E25176BD2444479C9B2C5DC8 /* Check Pods Manifest.lock */,
 				98276B75191B7970003E6700 /* Sources */,
 				98276B76191B7970003E6700 /* Frameworks */,
 				98276B77191B7970003E6700 /* Resources */,
-				45A9596CA8D84FC8BDC1AB43 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,38 +379,22 @@
 			productReference = 98276B79191B7970003E6700 /* MelissaShop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		98276B9C191B7970003E6700 /* MelissaShopTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98276BB1191B7970003E6700 /* Build configuration list for PBXNativeTarget "MelissaShopTests" */;
-			buildPhases = (
-				F3469A382973467FA5FE47DC /* Check Pods Manifest.lock */,
-				98276B99191B7970003E6700 /* Sources */,
-				98276B9A191B7970003E6700 /* Frameworks */,
-				98276B9B191B7970003E6700 /* Resources */,
-				7A5DC36B5A824C2F93433E8B /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				98276BA3191B7970003E6700 /* PBXTargetDependency */,
-			);
-			name = MelissaShopTests;
-			productName = MelissaShopTests;
-			productReference = 98276B9D191B7970003E6700 /* MelissaShopTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		98276B71191B7970003E6700 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MELS;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Appiaries Corporation";
 				TargetAttributes = {
-					98276B9C191B7970003E6700 = {
-						TestTargetID = 98276B78191B7970003E6700;
+					98276B78191B7970003E6700 = {
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -471,7 +412,6 @@
 			projectRoot = "";
 			targets = (
 				98276B78191B7970003E6700 /* MelissaShop */,
-				98276B9C191B7970003E6700 /* MelissaShopTests */,
 			);
 		};
 /* End PBXProject section */
@@ -489,137 +429,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98276B9B191B7970003E6700 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98276BA9191B7970003E6700 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		45A9596CA8D84FC8BDC1AB43 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A5DC36B5A824C2F93433E8B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MelissaShopTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E25176BD2444479C9B2C5DC8 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F3469A382973467FA5FE47DC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98276B75191B7970003E6700 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9847355C1A31E2BA003E39C6 /* MELSUserAttribute.m in Sources */,
-				98FFA9B81920D8CE004C6536 /* MELSInformationViewController.m in Sources */,
-				98FFA9AC1920D403004C6536 /* MELSHomeViewController.m in Sources */,
-				98E604CB192721D800E3495C /* MELSShop.m in Sources */,
-				98E604CE1927233B00E3495C /* MELSShopManager.m in Sources */,
-				98824856192499880027B931 /* MELSInformation.m in Sources */,
-				985B67611A30A37500C9C2A9 /* MELSLoginFormViewController.m in Sources */,
-				9853BF7619370081007762B0 /* MELSAppInfo.m in Sources */,
-				98FFA9C81920E636004C6536 /* MELSUserManager.m in Sources */,
-				98FFA9C11920DB8D004C6536 /* MELSCouponListViewController.m in Sources */,
-				98AF8CBF192C925F0077DBC3 /* MELSSettingViewController.m in Sources */,
-				98AF8CC8192CD6F10077DBC3 /* NSDateFormatter+GregorianCalendar.m in Sources */,
-				98E36EC4192200CE00807684 /* MELSUser.m in Sources */,
+				98FFA9B81920D8CE004C6536 /* InformationViewController.m in Sources */,
+				98FFA9AC1920D403004C6536 /* HomeViewController.m in Sources */,
+				985B67611A30A37500C9C2A9 /* LogInFormViewController.m in Sources */,
+				98FFA9C11920DB8D004C6536 /* CouponListViewController.m in Sources */,
+				98AF8CBF192C925F0077DBC3 /* SettingViewController.m in Sources */,
 				98276B89191B7970003E6700 /* main.m in Sources */,
-				9853BF7919370181007762B0 /* MELSAppInfoManager.m in Sources */,
-				98F4C0CF1929CA7700AE2644 /* MELSCouponListViewCell.m in Sources */,
-				98E36ED819221CF400807684 /* NSURL+dictionaryFromQueryString.m in Sources */,
-				98E0BECF192A0BCB00F35B10 /* MELSCouponUseViewController.m in Sources */,
-				987D48D21929E9C30049F4EE /* MELSCouponDetailViewCell.m in Sources */,
-				98FFA9BE1920DAC7004C6536 /* MELSShopListViewController.m in Sources */,
-				98AF8CC5192CC8420077DBC3 /* MELSSettingAppInfoViewController.m in Sources */,
-				98AF8CC2192CC8140077DBC3 /* MELSSettingUserViewController.m in Sources */,
-				98FFA9AF1920D474004C6536 /* MELSShopMapViewController.m in Sources */,
-				985B67641A30A39200C9C2A9 /* MELSRegistViewController.m in Sources */,
-				98F4C0CC1929C88900AE2644 /* MELSCouponManager.m in Sources */,
-				98276B8D191B7970003E6700 /* MELSAppDelegate.m in Sources */,
-				98FFA9C41920DBDE004C6536 /* MELSCouponDetailViewController.m in Sources */,
-				98E604C41926FE4000E3495C /* MELSBaseViewController.m in Sources */,
-				988248591924A8F60027B931 /* MELSInformationManager.m in Sources */,
-				98F4C0C91929C62100AE2644 /* MELSCoupon.m in Sources */,
-				9882485D1924BB9D0027B931 /* MELSHomeViewCell.m in Sources */,
-				98FFA9A41920D21F004C6536 /* MELSLoginViewController.m in Sources */,
-				98E604C81927217A00E3495C /* MELSShopListViewCell.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98276B99191B7970003E6700 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98276BAB191B7970003E6700 /* MelissaShopTests.m in Sources */,
+				98F4C0CF1929CA7700AE2644 /* CouponListViewCell.m in Sources */,
+				98E0BECF192A0BCB00F35B10 /* CouponUseViewController.m in Sources */,
+				987D48D21929E9C30049F4EE /* CouponDetailViewCell.m in Sources */,
+				98FFA9BE1920DAC7004C6536 /* ShopListViewController.m in Sources */,
+				98AF8CC5192CC8420077DBC3 /* SettingAppInfoViewController.m in Sources */,
+				98AF8CC2192CC8140077DBC3 /* SettingUserViewController.m in Sources */,
+				98FFA9AF1920D474004C6536 /* ShopMapViewController.m in Sources */,
+				985B67641A30A39200C9C2A9 /* SignUpViewController.m in Sources */,
+				98276B8D191B7970003E6700 /* AppDelegate.m in Sources */,
+				98FFA9C41920DBDE004C6536 /* CouponDetailViewController.m in Sources */,
+				98E604C41926FE4000E3495C /* BaseViewController.m in Sources */,
+				9882485D1924BB9D0027B931 /* HomeViewCell.m in Sources */,
+				98FFA9A41920D21F004C6536 /* LogInViewController.m in Sources */,
+				98E604C81927217A00E3495C /* ShopListViewCell.m in Sources */,
+				31CD9A5284C30F4A7B8BC265 /* User.m in Sources */,
+				31CD92120E6DBD2B16A79750 /* Shop.m in Sources */,
+				31CD9E0D48B888C84C21369B /* AppInfo.m in Sources */,
+				31CD920F6031CEDD79C0883E /* Information.m in Sources */,
+				31CD9C062203D454EC7EB5C9 /* Coupon.m in Sources */,
+				31CD9CDB752AD41B7D9102CC /* Device.m in Sources */,
+				31CD9A89AED7BAE228D7940B /* NSURL+dictionaryFromQueryString.m in Sources */,
+				31CD958752AB89ACB01C4E8C /* NSDateFormatter+GregorianCalendar.m in Sources */,
+				31CD91147A88FF7FF171F984 /* Image.m in Sources */,
+				31CD9F2ED314FC2A77F2D6AB /* DateHelper.m in Sources */,
+				C5ADAC4B25A3FA978C72B03F /* DataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		98276BA3191B7970003E6700 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 98276B78191B7970003E6700 /* MelissaShop */;
-			targetProxy = 98276BA2191B7970003E6700 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		98276B85191B7970003E6700 /* InfoPlist.strings */ = {
@@ -636,14 +487,6 @@
 				98276B8F191B7970003E6700 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		98276BA7191B7970003E6700 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98276BA8191B7970003E6700 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		98FFA9A91920D2C6004C6536 /* Localizable.strings */ = {
@@ -675,6 +518,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -690,9 +534,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -715,6 +560,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -723,18 +569,21 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
 		98276BAF191B7970003E6700 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC227D5AB504554BAB05128 /* Pods.xcconfig */;
+			baseConfigurationReference = 959E7AF63363B3C06D9B83FF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -742,7 +591,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MelissaShop/MelissaShop-Prefix.pch";
 				INFOPLIST_FILE = "MelissaShop/MelissaShop-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -752,12 +601,12 @@
 		};
 		98276BB0191B7970003E6700 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC227D5AB504554BAB05128 /* Pods.xcconfig */;
+			baseConfigurationReference = A4B5B9256C8E1E614A5E6737 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -765,51 +614,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MelissaShop/MelissaShop-Prefix.pch";
 				INFOPLIST_FILE = "MelissaShop/MelissaShop-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		98276BB2191B7970003E6700 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MelissaShop.app/MelissaShop";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MelissaShop/MelissaShop-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MelissaShopTests/MelissaShopTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		98276BB3191B7970003E6700 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MelissaShop.app/MelissaShop";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MelissaShop/MelissaShop-Prefix.pch";
-				INFOPLIST_FILE = "MelissaShopTests/MelissaShopTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -830,15 +639,6 @@
 			buildConfigurations = (
 				98276BAF191B7970003E6700 /* Debug */,
 				98276BB0191B7970003E6700 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98276BB1191B7970003E6700 /* Build configuration list for PBXNativeTarget "MelissaShopTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				98276BB2191B7970003E6700 /* Debug */,
-				98276BB3191B7970003E6700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

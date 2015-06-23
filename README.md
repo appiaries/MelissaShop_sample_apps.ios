@@ -16,7 +16,9 @@ MelissaShop_sample_apps.ios
 
 ## REST API バージョンとAppiaries SDKバージョンについて
 
-最新版はAppiaries SDK version 1.3.0に対応しています。
+最新版は Appiaries iOS SDK ver.2.0.0 に対応しています。
+以前のバージョンの SDK で実装されたサンプルアプリは v1_4_0 ブランチに格納されたソースをご利用下さい。
+
 REST APIでの動作を確認したい場合は、tagの「vAPI」を選択してください。
 
 詳細は、アピアリーズ公式サイト、および解説ドキュメントを御覧ください。

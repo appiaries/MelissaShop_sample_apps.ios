@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="GAR-XL-Dhx">
             <objects>
-                <viewController id="GI3-Ey-LLq" customClass="MELSLoginViewController" sceneMemberID="viewController">
+                <viewController id="GI3-Ey-LLq" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4VX-w6-Ee7"/>
                         <viewControllerLayoutGuide type="bottom" id="gv1-Ez-x2Y"/>
@@ -90,7 +90,7 @@
         <!--Home View Controller-->
         <scene sceneID="pvY-NW-hAo">
             <objects>
-                <viewController id="rdX-My-KnZ" customClass="MELSHomeViewController" sceneMemberID="viewController">
+                <viewController id="rdX-My-KnZ" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c90-lB-rUA"/>
                         <viewControllerLayoutGuide type="bottom" id="yGM-cC-V1c"/>
@@ -103,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeViewCell" id="0SU-YQ-0dR" customClass="MELSHomeViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeViewCell" id="0SU-YQ-0dR" customClass="HomeViewCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0SU-YQ-0dR" id="fHT-1E-h4x">
@@ -210,7 +210,7 @@
         <!--マップ-->
         <scene sceneID="JmC-rm-WCj">
             <objects>
-                <viewController id="Oos-t4-oZS" customClass="MELSShopMapViewController" sceneMemberID="viewController">
+                <viewController id="Oos-t4-oZS" customClass="ShopMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oZ2-rI-FTQ"/>
                         <viewControllerLayoutGuide type="bottom" id="vpx-y8-23s"/>
@@ -266,7 +266,7 @@
         <!--クーポン一覧-->
         <scene sceneID="Kz4-CO-Mgq">
             <objects>
-                <viewController id="r3b-s2-rNp" customClass="MELSCouponListViewController" sceneMemberID="viewController">
+                <viewController id="r3b-s2-rNp" customClass="CouponListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oud-5m-c2e"/>
                         <viewControllerLayoutGuide type="bottom" id="mgY-tT-Bps"/>
@@ -282,7 +282,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell alpha="0.80000000000000004" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CouponListViewCell" id="EvO-2x-tEK" customClass="MELSCouponListViewCell">
+                                    <tableViewCell alpha="0.80000000000000004" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CouponListViewCell" id="EvO-2x-tEK" customClass="CouponListViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EvO-2x-tEK" id="qvT-J3-0cw">
@@ -371,7 +371,7 @@
         <!--Home-->
         <scene sceneID="9Ss-Gj-LFL">
             <objects>
-                <navigationController storyboardIdentifier="LoginNavigationController" definesPresentationContext="YES" id="qC6-7Q-rLE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LogInNavigationController" definesPresentationContext="YES" id="qC6-7Q-rLE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="sHj-h3-7mr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ziu-7M-dbp">
                         <autoresizingMask key="autoresizingMask"/>
@@ -387,7 +387,7 @@
         <!--ログイン-->
         <scene sceneID="F64-Pi-g7i">
             <objects>
-                <viewController id="GYL-O2-Vyh" customClass="MELSLoginFormViewController" sceneMemberID="viewController">
+                <viewController id="GYL-O2-Vyh" customClass="LogInFormViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uTy-ie-9oN"/>
                         <viewControllerLayoutGuide type="bottom" id="fNs-aY-0tn"/>
@@ -399,10 +399,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-mN-frm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crv-lF-cWB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="crv-lF-cWB">
                                 <rect key="frame" x="128" y="94" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="GYL-O2-Vyh" id="TW3-Ug-EHs"/>
                                 </connections>
@@ -412,10 +412,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBH-L2-1Y2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FBH-L2-1Y2">
                                 <rect key="frame" x="128" y="137" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="send" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="GYL-O2-Vyh" id="9db-yI-dna"/>
                                 </connections>
@@ -447,7 +447,7 @@
         <!--Information-->
         <scene sceneID="W0R-aZ-jcb">
             <objects>
-                <viewController id="Kb5-rf-a8p" customClass="MELSInformationViewController" sceneMemberID="viewController">
+                <viewController id="Kb5-rf-a8p" customClass="InformationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m47-dg-7xa"/>
                         <viewControllerLayoutGuide type="bottom" id="jxj-N8-6ZJ"/>
@@ -537,7 +537,7 @@
         <!--検索結果一覧-->
         <scene sceneID="ebe-Mc-Kfw">
             <objects>
-                <viewController id="VbA-i8-xsM" customClass="MELSShopListViewController" sceneMemberID="viewController">
+                <viewController id="VbA-i8-xsM" customClass="ShopListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VnG-JT-Zg2"/>
                         <viewControllerLayoutGuide type="bottom" id="D8V-Gz-VjW"/>
@@ -566,7 +566,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShopListViewCell" id="50K-K8-Kim" customClass="MELSShopListViewCell">
+                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShopListViewCell" id="50K-K8-Kim" customClass="ShopListViewCell">
                                         <rect key="frame" x="0.0" y="72" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="50K-K8-Kim" id="0Ar-Aq-stu">
@@ -667,7 +667,7 @@
         <!--クーポン利用確認-->
         <scene sceneID="Li8-2R-5Be">
             <objects>
-                <viewController id="Mrd-eh-GK2" customClass="MELSCouponDetailViewController" sceneMemberID="viewController">
+                <viewController id="Mrd-eh-GK2" customClass="CouponDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="86w-wI-Tjj"/>
                         <viewControllerLayoutGuide type="bottom" id="Qz8-eH-yQG"/>
@@ -727,7 +727,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponDetailViewCell" id="CBW-Ec-dLk" customClass="MELSCouponDetailViewCell">
+                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponDetailViewCell" id="CBW-Ec-dLk" customClass="CouponDetailViewCell">
                                         <rect key="frame" x="0.0" y="122" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CBW-Ec-dLk" id="Rtn-Zj-fY1">
@@ -792,7 +792,7 @@
         <!--クーポン利用確認-->
         <scene sceneID="g8H-nq-4mY">
             <objects>
-                <viewController id="cuO-vV-tFv" customClass="MELSCouponUseViewController" sceneMemberID="viewController">
+                <viewController id="cuO-vV-tFv" customClass="CouponUseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCg-px-m7b"/>
                         <viewControllerLayoutGuide type="bottom" id="TBp-eX-fZ2"/>
@@ -837,7 +837,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell alpha="0.89999997615814209" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponDetailViewCell" id="yTT-1T-NVZ" customClass="MELSCouponDetailViewCell">
+                                    <tableViewCell alpha="0.89999997615814209" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CouponDetailViewCell" id="yTT-1T-NVZ" customClass="CouponDetailViewCell">
                                         <rect key="frame" x="0.0" y="352" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yTT-1T-NVZ" id="fJz-cP-smU">
@@ -919,7 +919,7 @@
         <!--設定-->
         <scene sceneID="qhZ-5R-0vs">
             <objects>
-                <viewController id="r7Z-5r-bNB" customClass="MELSSettingViewController" sceneMemberID="viewController">
+                <viewController id="r7Z-5r-bNB" customClass="SettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eqv-yZ-l5B"/>
                         <viewControllerLayoutGuide type="bottom" id="wsz-kU-02M"/>
@@ -989,7 +989,7 @@
         <!--ユーザ情報-->
         <scene sceneID="Yb3-7q-I5f">
             <objects>
-                <viewController id="7NG-zH-SPk" customClass="MELSSettingUserViewController" sceneMemberID="viewController">
+                <viewController id="7NG-zH-SPk" customClass="SettingUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="efh-vd-2xI"/>
                         <viewControllerLayoutGuide type="bottom" id="W2S-Ny-5Re"/>
@@ -1058,7 +1058,7 @@
         <!--Setting App Info View Controller-->
         <scene sceneID="iz6-SV-YMz">
             <objects>
-                <viewController id="YCM-87-lda" customClass="MELSSettingAppInfoViewController" sceneMemberID="viewController">
+                <viewController id="YCM-87-lda" customClass="SettingAppInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ERF-2z-d3S"/>
                         <viewControllerLayoutGuide type="bottom" id="S7a-t4-gPf"/>
@@ -1130,7 +1130,7 @@
         <!--新規会員登録-->
         <scene sceneID="wPw-Nx-ZQS">
             <objects>
-                <viewController id="wip-4K-bOx" customClass="MELSRegistViewController" sceneMemberID="viewController">
+                <viewController id="wip-4K-bOx" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YtP-vw-vq8"/>
                         <viewControllerLayoutGuide type="bottom" id="Ydn-IZ-xcj"/>
@@ -1142,10 +1142,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-44-tim">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@appiaries.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-6W-Wo6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@appiaries.com" adjustsFontSizeToFit="NO" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-6W-Wo6">
                                 <rect key="frame" x="128" y="85" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="wip-4K-bOx" id="hgX-yU-r14"/>
                                 </connections>
@@ -1155,10 +1155,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-Ss-vrd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-Ss-vrd">
                                 <rect key="frame" x="128" y="128" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="wip-4K-bOx" id="sfw-5X-Cb4"/>
                                 </connections>
@@ -1168,10 +1168,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="19900508" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjl-Ny-Vaz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="19900508" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tjl-Ny-Vaz">
                                 <rect key="frame" x="128" y="170" width="176" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="send"/>
                                 <connections>
                                     <outlet property="delegate" destination="wip-4K-bOx" id="z9T-ZM-UNe"/>
                                 </connections>
@@ -1197,7 +1197,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="新規会員登録" id="hkg-IK-QlG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Gn-oM-aMs">
+                        <barButtonItem key="rightBarButtonItem" title="登録" id="6Gn-oM-aMs">
                             <connections>
                                 <action selector="saveButtonAction:" destination="wip-4K-bOx" id="d2M-Rm-Wwx"/>
                             </connections>

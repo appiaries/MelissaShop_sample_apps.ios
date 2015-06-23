@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,6 +16,20 @@
                BlueprintIdentifier = "98276B78191B7970003E6700"
                BuildableName = "MelissaShop.app"
                BlueprintName = "MelissaShop"
+               ReferencedContainer = "container:MelissaShop.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "98276B9C191B7970003E6700"
+               BuildableName = "MelissaShopTests.xctest"
+               BlueprintName = "MelissaShopTests"
                ReferencedContainer = "container:MelissaShop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -58,7 +71,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98276B78191B7970003E6700"
@@ -76,7 +90,7 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98276B78191B7970003E6700"
@@ -84,7 +98,7 @@
             BlueprintName = "MelissaShop"
             ReferencedContainer = "container:MelissaShop.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
